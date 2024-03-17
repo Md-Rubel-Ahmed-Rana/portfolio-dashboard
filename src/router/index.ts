@@ -1,17 +1,17 @@
-import { createRouter, createWebHistory } from "vue-router";
-import RegisterForm from "@/components/RegisterForm.vue";
-import LoginForm from "@/components/LoginForm.vue";
-import HomePage from "@/components/HomePage.vue";
-import PublicLayout from "../layout/PublicLayout.vue";
-import DashboardLayout from "../layout/DashboardLayout.vue";
-import DashboardCards from "@/components/DashboardCards.vue";
-import Projects from "@/components/Projects.vue";
-import Services from "@/components/Services.vue";
 import Courses from "@/components/Courses.vue";
+import DashboardCards from "@/components/DashboardCards.vue";
 import Educations from "@/components/Educations.vue";
 import Experiences from "@/components/Experiences.vue";
+import HomePage from "@/components/HomePage.vue";
+import LoginForm from "@/components/LoginForm.vue";
+import Projects from "@/components/Projects.vue";
+import RegisterForm from "@/components/RegisterForm.vue";
+import Services from "@/components/Services.vue";
+import DashboardLayout from "@/layout/DashboardLayout.vue";
+import PublicLayout from "@/layout/PublicLayout.vue";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
@@ -40,7 +40,7 @@ const routes = [
     component: DashboardCards,
   },
   {
-    path: "/dashboard/:route",
+    path: "/dashboard",
     name: "DynamicRoutes",
     component: DashboardLayout,
     children: [
