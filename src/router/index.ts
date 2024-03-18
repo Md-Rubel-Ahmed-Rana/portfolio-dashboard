@@ -4,6 +4,7 @@ import Courses from "@/components/courses/Courses.vue";
 import Educations from "@/components/educations/Educations.vue";
 import Experiences from "@/components/experiences/Experiences.vue";
 import HomePage from "@/components/home/HomePage.vue";
+import EditProject from "@/components/projects/EditProject.vue";
 import ProjectDetails from "@/components/projects/ProjectDetails.vue";
 import Projects from "@/components/projects/Projects.vue";
 import Services from "@/components/services/Services.vue";
@@ -54,6 +55,12 @@ const routes: Array<RouteRecordRaw> = [
         path: "/dashboard/projects/:id",
         name: "ProjectsDetails",
         component: ProjectDetails,
+        props: true,
+      },
+      {
+        path: "/dashboard/projects/edit/:id",
+        name: "ProjectsEdit",
+        component: EditProject,
         props: true,
       },
       {
