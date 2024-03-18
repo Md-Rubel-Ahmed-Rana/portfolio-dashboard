@@ -13,13 +13,19 @@
       <div class="mb-4">
         <h3 class="font-semibold mb-2 text-lg">Features</h3>
         <div v-for="(feature, index) in formData.features" :key="index" class="mb-4">
+          <div class="flex items-center">
         <input type="text" v-model="formData.features[index]" name="feature" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
+        <fa icon="trash" class="-ml-5 cursor-pointer text-red-500" />
+        </div>
         </div>
       </div>
       <div class="mb-4">
         <h3 class="font-semibold mb-2 text-lg">Technologies</h3>
         <div v-for="(tech, index) in formData.techStack" :key="index" class="mb-4">
-        <input type="text" v-model="formData.techStack[index]" name="feature" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
+          <div class="flex items-center">
+            <input type="text" v-model="formData.techStack[index]" name="feature" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
+            <fa icon="trash" class="-ml-5 cursor-pointer text-red-500" />
+          </div>
         </div>
       </div>
       <div class="mb-4">
