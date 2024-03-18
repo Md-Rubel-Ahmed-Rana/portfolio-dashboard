@@ -1,6 +1,9 @@
 <template>
   <div class="container mx-auto ">
-    <h1 class="text-3xl font-semibold mb-4">Projects</h1>
+    <div class="flex justify-between">
+      <h1 class="text-3xl font-semibold mb-4">Projects</h1>
+      <p> <button class="bg-blue-600 px-5 py-2 rounded-md text-white">Add Project</button> </p>
+    </div>
     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <li v-for="project in projects" :key="project.id" class="bg-white shadow-md rounded-md overflow-hidden">
         <img :src="projectImage(project)" alt="Project Image" class="w-full h-40 object-cover">
