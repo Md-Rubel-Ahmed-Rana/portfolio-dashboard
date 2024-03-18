@@ -6,22 +6,32 @@ const baseApi = "https://portfolio-backend-v2-p89h.onrender.com/api/v2";
 export default createStore({
   state: {
     projects: [],
-    product: null,
+    project: null,
   },
-  getters: {},
+  getters: {
+    projects(state) {
+      return state.projects;
+    },
+    project(state) {
+      return state.project;
+    },
+  },
   mutations: {
     setProjects(state, projects) {
       state.projects = projects;
     },
     setProject(state, project) {
-      state.product = project;
+      state.project = project;
     },
   },
   actions: {
     async getProjects({ commit }) {
       const res = await axios.get(`${baseApi}/project`);
-      console.log(res.data.data);
       commit("setProjects", res?.data?.data);
+    },
+    async getSingleProject({ commit }, projectId) {
+      const res = await axios.get(`${baseApi}/project/single/${projectId}`);
+      commit("setProject", res?.data?.data);
     },
   },
   modules: {},
