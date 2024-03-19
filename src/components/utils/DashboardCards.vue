@@ -13,21 +13,17 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapState, mapActions } from 'vuex';
 
 export default {
-  data() {
-    return {
-      cards: []
-    };
+  computed: {
+    ...mapState(["cards"])
   },
-  async created() {
-    try {
-      const response = await axios.get('/cards.json');
-      this.cards = response.data;
-    } catch (error) {
-      console.error('Error fetching cards:', error);
-    }
+  methods: {
+    ...mapActions(["getCards"])
+  },
+  created() {
+    this.getCards()
   }
 };
 </script>
