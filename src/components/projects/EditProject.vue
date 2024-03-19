@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import makeArrayFromString from '@/utils/makeArrayFromString';
 import { mapState, mapActions } from 'vuex';
 
 export default {
@@ -83,6 +84,8 @@ export default {
     },
     submitForm() {
       // Handle form submission here
+      this.formData.features = makeArrayFromString(this.formData.features)
+      this.formData.techStack = makeArrayFromString(this.formData.techStack)
       console.log("Form submitted with data:", this.formData);
     }
   },

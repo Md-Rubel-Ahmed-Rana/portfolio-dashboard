@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseApi = process.env.BASE_API || "http://localhost:5002/api/v2";
+const baseApi = process.env.VUE_APP_BASE_API;
 
 export const utilApis = {
   async getCards({ commit }: any) {

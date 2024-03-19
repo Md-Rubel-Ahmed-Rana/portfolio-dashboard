@@ -1,5 +1,6 @@
+import router from "@/router";
 import axios from "axios";
-const baseApi = process.env.BASE_API || "http://localhost:5002/api/v2";
+const baseApi = process.env.VUE_APP_BASE_API;
 
 export const projectApis = {
   async getProjects({ commit }: any) {
@@ -9,5 +10,10 @@ export const projectApis = {
   async getSingleProject({ commit }: any, projectId: string) {
     const res = await axios.get(`${baseApi}/project/single/${projectId}`);
     commit("setProject", res?.data?.data);
+  },
+  async deleteProject({ dispatch }: any, projectId: string) {
+    await axios.delete(`${baseApi}/project/delete/${projectId}`);
+    dispatch("getProjects");
+    router.push("/dashboard/projects");
   },
 };

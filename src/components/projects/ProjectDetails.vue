@@ -24,7 +24,7 @@
       </div>
       
       <div class="mb-4">
-        <p><span class="font-semibold">Status:</span> {{ project?.isDeveloping ? "Development continuing" : "Deployed" }}</p>
+        <p><span class="font-semibold">Status:</span> {{ project?.projectStatus }}</p>
       </div>
       
       <div class="mb-4">
@@ -40,9 +40,9 @@
       
       <div class="flex">
         <router-link :to="`/dashboard/projects/edit/${project?.id}`">
-          <button class="bg-blue-600 px-4 py-2 rounded-md text-white mr-4 hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300">Edit</button>
+          <button class="bg-blue-600 px-10 py-2 rounded-md text-white mr-4 hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300">Edit</button>
         </router-link>
-        <button class="bg-red-600 px-4 py-2 rounded-md text-white hover:bg-red-700 focus:outline-none focus:ring focus:ring-red-300">Delete</button>
+        <button @click="deleteProject(project?.id)" class="bg-red-600 px-10 py-2 rounded-md text-white hover:bg-red-700 focus:outline-none focus:ring focus:ring-red-300">Delete</button>
       </div>
     </div>
   </div>
@@ -62,10 +62,10 @@ export default {
     ...mapState(["project"])
   },
   methods: {
-    ...mapActions(["getSingleProject"]),
+    ...mapActions(["getSingleProject", "deleteProject"]),
     fetchProjectDetails() {
       this.getSingleProject(this.id);
-    }
+    },
   },
   mounted() {
     this.fetchProjectDetails();
