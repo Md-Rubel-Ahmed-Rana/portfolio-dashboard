@@ -9,4 +9,7 @@ export const getters = {
   cards(state: RootState) {
     return state.cards;
   },
+  homeData(state: RootState) {
+    return state.homeData;
+  },
 };

@@ -10,4 +10,7 @@ export const mutations = {
   setCards(state: RootState, cards: []) {
     state.cards = cards;
   },
+  setHomeData(state: RootState, homeData: {}) {
+    state.homeData = homeData;
+  },
 };

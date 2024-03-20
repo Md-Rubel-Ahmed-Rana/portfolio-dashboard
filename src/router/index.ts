@@ -13,6 +13,11 @@ import DashboardCards from "@/components/utils/DashboardCards.vue";
 import DashboardLayout from "@/layout/DashboardLayout.vue";
 import PublicLayout from "@/layout/PublicLayout.vue";
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import UtilPage from "@/components/home/UtilPage.vue";
+import EditBanner from "@/components/home/EditBanner.vue";
+import EditAbout from "@/components/home/EditAbout.vue";
+import EditSkills from "@/components/home/EditSkills.vue";
+import EditSocialLinks from "@/components/home/EditSocialLinks.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -88,6 +93,31 @@ const routes: Array<RouteRecordRaw> = [
         path: "/dashboard/courses",
         name: "Courses",
         component: Courses,
+      },
+      {
+        path: "/dashboard/utils",
+        name: "Utils",
+        component: UtilPage,
+      },
+      {
+        path: "/dashboard/utils/banner-content/edit",
+        name: "BannerSection",
+        component: EditBanner,
+      },
+      {
+        path: "/dashboard/utils/about-content/edit",
+        name: "AboutSection",
+        component: EditAbout,
+      },
+      {
+        path: "/dashboard/utils/skills-content/edit",
+        name: "SkillsSection",
+        component: EditSkills,
+      },
+      {
+        path: "/dashboard/utils/social-links-content/edit",
+        name: "SocialLinksSection",
+        component: EditSocialLinks,
       },
     ],
   },
