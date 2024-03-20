@@ -1,11 +1,13 @@
+import { RootState } from "./../types/state.type";
+import { IProject } from "./../types/project.type";
 export const mutations = {
-  setProjects(state: any, projects: []) {
+  setProjects(state: RootState, projects: IProject[]) {
     state.projects = projects;
   },
-  setProject(state: any, project: {}) {
+  setProject(state: RootState, project: IProject) {
     state.project = project;
   },
-  setCards(state: any, cards: []) {
+  setCards(state: RootState, cards: []) {
     state.cards = cards;
   },
 };
