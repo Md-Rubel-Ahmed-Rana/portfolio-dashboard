@@ -20,4 +20,9 @@ export const projectApis = {
     await axios.patch(`${baseApi}/project/update/${projectId}`, updatedData);
     router.push(`/dashboard/projects/${projectId}`);
   },
+  async addNewProject({ dispatch }: any, data: any) {
+    await axios.post(`${baseApi}/project/add`, data);
+    dispatch("getProjects");
+    router.push("/dashboard/projects");
+  },
 };
