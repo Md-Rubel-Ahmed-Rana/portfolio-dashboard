@@ -67,7 +67,7 @@ export default {
     ...mapState(["project"])
   },
   methods: {
-    ...mapActions(["getSingleProject"]),
+    ...mapActions(["getSingleProject", "updateProject"]),
     fetchProjectDetails() {
       this.getSingleProject(this.id);
     },
@@ -83,10 +83,9 @@ export default {
       this.formData.techStack = this.project.techStack.join(", ");
     },
     submitForm() {
-      // Handle form submission here
       this.formData.features = makeArrayFromString(this.formData.features)
       this.formData.techStack = makeArrayFromString(this.formData.techStack)
-      console.log("Form submitted with data:", this.formData);
+      this.updateProject({ projectId: this.id, updatedData: this.formData })
     }
   },
   mounted() {
