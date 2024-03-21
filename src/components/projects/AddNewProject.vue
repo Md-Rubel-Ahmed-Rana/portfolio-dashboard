@@ -53,7 +53,7 @@
 
 <script>
 import makeArrayFromString from '@/utils/makeArrayFromString';
-import { mapState, mapActions } from 'vuex';
+import {  mapActions } from 'vuex';
 
 export default {
   methods: {
