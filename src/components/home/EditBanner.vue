@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="text-xl font-semibold"> Edit banner section</h2>
+        <h2 class="text-xl font-semibold"> Edit banner data</h2>
         <form @submit.prevent="handleEditBannerData">
             <div class="mb-4">
                 <label for="description" class="block text-gray-700 font-semibold mb-2 text-lg">Name:</label>
