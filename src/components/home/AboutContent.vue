@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col justify-center items-center p-10 shadow-md">
+  <div class="p-10 shadow-md">
     <h3 class="text-4xl font-bold mb-8">About content</h3>
     <div>
-        <img :src="content?.image" alt="About image" class="w-full mb-4">
+        <img :src="content?.image" alt="About image" class="w-60 h-48 p-3 border rounded-md mb-4">
         <p class="text-lg font-semibold">Description 1: {{ content?.description1 }}</p>
         <p class="text-lg font-semibold">Description 2: {{ content?.description2 }}</p>
         <p class="mt-4">
