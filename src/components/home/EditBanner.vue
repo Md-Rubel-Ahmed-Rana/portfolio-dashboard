@@ -62,9 +62,9 @@ export default {
         ...mapState(["homeData"])
     },
     methods: {
-        ...mapActions(["getHomeData", "uploadSingleImage"]),
+        ...mapActions(["getHomeData", "uploadSingleImage", "updateBannerData"]),
         handleEditBannerData(){
-            console.log(this.id, this.formData);
+            this.updateBannerData({ id: this.id, data: this.formData })
         },
        async handleUploadImage(event){
             this.isUploading = true
