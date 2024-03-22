@@ -23,9 +23,25 @@
                     class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"></input>
             </div>
             <div class="mb-4">
-                <label for="image"
-                    class="block text-gray-700 w-40 h-40 border p-3 rounded-md font-semibold mb-2 text-lg">Image:</label>
-                <img :src="formData.image" alt="About section image">
+                <div class="block text-gray-700  font-semibold text-lg">
+                    <label for="image">Image:</label>
+                    <img class="w-48 h-40 border p-3 rounded-md" v-if="!isUploadImage" :src="formData.image"
+                        alt="Banner section image">
+                </div>
+                <input v-on:change="handleUploadImage" v-if="isUploadImage" accept="image/*" type="file" required
+                    id="image" name="image"
+                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500" />
+                <p>
+                    <span class="text-sm font-semibold" v-if="isUploading">Uploading Image. Please wait...</span>
+                </p>
+                <button v-if="!isUploadImage" @click="toggleImageUpload" type="button"
+                    class="bg-purple-500 text-white mt-4 py-2 px-3 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-500">
+                    Change image
+                </button>
+                <button v-if="isUploadImage" @click="toggleImageUpload" type="button"
+                    class="bg-purple-500 text-white mt-5 py-2 px-3 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-500">
+                    Cancel
+                </button>
             </div>
             <div class="mt-6">
                 <button type="submit"
@@ -33,7 +49,6 @@
                     Save changes
                 </button>
             </div>
-
         </form>
     </div>
 </template>
@@ -47,9 +62,21 @@ export default {
         ...mapState(["homeData"])
     },
     methods: {
-        ...mapActions(["getHomeData"]),
+        ...mapActions(["getHomeData", "uploadSingleImage"]),
         handleEditBannerData(){
             console.log(this.id, this.formData);
+        },
+       async handleUploadImage(event){
+            this.isUploading = true
+            const data = await this.uploadSingleImage(event.target.files[0]);
+            if(data?.url){
+                this.isUploading = false
+                this.formData.image = data?.url
+                this.isUploadImage = false
+            }
+        },
+        toggleImageUpload(){
+            this.isUploadImage = !this.isUploadImage
         }
     },
     data() {
@@ -60,8 +87,11 @@ export default {
                 image: "",
                 position: "",
                 description: "",
-                resumeLink: ""
-            }
+                resumeLink: "",
+                uploadedImage: ""
+            },
+            isUploadImage: false,
+            isUploading: false,
         }
     },
     created() {
@@ -84,5 +114,6 @@ export default {
         }
     }
 }
+
 
 </script>
