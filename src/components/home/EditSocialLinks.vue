@@ -43,12 +43,12 @@ export default {
         ...mapState(["homeData"])
     },
     methods: {
-        ...mapActions(["getHomeData"]),
+        ...mapActions(["getHomeData", "updateSocialLinksData"]),
         handleAddNewLink(){
             this.formData.socialLinks.push({ name: "Example name", link: "https://example.com/example-link"})
         },
         handleEditSocialLinks(){
-            console.log(this.formData);
+            this.updateSocialLinksData({id: this.id, data: this.formData.socialLinks})
         },
         handleRemoveLink(link){
             this.formData.socialLinks = this.formData.socialLinks.filter((lnk) => lnk?.name !== link?.name)

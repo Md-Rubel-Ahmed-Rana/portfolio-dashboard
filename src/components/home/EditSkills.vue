@@ -23,10 +23,10 @@ export default {
         ...mapState(["homeData"])
     },
     methods: {
-        ...mapActions(["getHomeData"]),
+        ...mapActions(["getHomeData", "updateSkillsData"]),
         handleEditSkills(){
             this.formData.skills = makeArrayFromString(this.formData.skills)
-            console.log(this.formData);
+            this.updateSkillsData({ id: this.id, data: this.formData.skills });
         }
     },
     data() {

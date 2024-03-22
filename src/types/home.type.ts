@@ -11,10 +11,11 @@ export type IAboutSection = {
   description1: string;
   description2: string;
 };
+export type ISocialLinks = { name: string; link: string };
 
 export type IHome = {
   bannerSection: IBannerSection;
   aboutSection: IAboutSection;
-  socialLinks: [{ name: string; link: string }];
+  socialLinks: ISocialLinks[];
   skills: string[];
 };
