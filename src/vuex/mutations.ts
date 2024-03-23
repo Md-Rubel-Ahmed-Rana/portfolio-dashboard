@@ -1,3 +1,5 @@
+import { ICourse } from "@/types/course.type";
+import { IEducation } from "./../types/education.type";
 import { RootState } from "./../types/state.type";
 import { IProject } from "./../types/project.type";
 export const mutations = {
@@ -13,10 +15,16 @@ export const mutations = {
   setHomeData(state: RootState, homeData: {}) {
     state.homeData = homeData;
   },
-  setCourses(state: RootState, courses: []) {
+  setCourses(state: RootState, courses: ICourse[]) {
     state.courses = courses;
   },
-  setCourse(state: RootState, course: {}) {
+  setCourse(state: RootState, course: ICourse) {
     state.course = course;
+  },
+  setEducations(state: RootState, educations: IEducation[]) {
+    state.educations = educations;
+  },
+  setEducation(state: RootState, education: IEducation) {
+    state.education = education;
   },
 };

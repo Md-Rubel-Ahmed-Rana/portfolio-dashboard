@@ -18,4 +18,10 @@ export const getters = {
   course(state: RootState) {
     return state.course;
   },
+  educations(state: RootState) {
+    return state.educations;
+  },
+  education(state: RootState) {
+    return state.education;
+  },
 };

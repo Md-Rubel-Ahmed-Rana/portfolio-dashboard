@@ -7,4 +7,6 @@ export const states: RootState = {
   homeData: {},
   courses: [],
   course: {},
+  educations: [],
+  education: {},
 };

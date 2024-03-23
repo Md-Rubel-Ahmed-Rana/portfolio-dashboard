@@ -25,7 +25,7 @@
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
             </div>
-            <div class="flex justify-between gap-5">
+            <div class="flex justify-between gap-5 mb-4">
                 <div class="mt-4 w-4/6">
                     <label for="institute" class="block mb-2 text-md font-semibold">Institute:</label>
                     <input type="text" id="institute" v-model="formData.institute"
