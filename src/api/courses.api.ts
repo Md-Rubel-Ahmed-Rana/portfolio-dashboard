@@ -7,4 +7,8 @@ export const courseApi = {
     const res = await axios.get(`${baseApi}/course`);
     commit("setCourses", res.data.data);
   },
+  async getCourse({ commit }: ICommit, { courseId }: { courseId: string }) {
+    const res = await axios.get(`${baseApi}/course/single/${courseId}`);
+    commit("setCourse", res.data.data);
+  },
 };
