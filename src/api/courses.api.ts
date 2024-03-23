@@ -20,4 +20,9 @@ export const courseApi = {
     await axios.patch(`${baseApi}/course/update/${courseId}`, updatedData);
     router.push("/dashboard/courses");
   },
+  async addNewCourse({ dispatch }: IDispatch, data: ICourse) {
+    await axios.post(`${baseApi}/course/add/`, data);
+    dispatch("getCourses");
+    router.push("/dashboard/courses");
+  },
 };

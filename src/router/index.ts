@@ -19,6 +19,7 @@ import EditAbout from "@/components/home/EditAbout.vue";
 import EditSkills from "@/components/home/EditSkills.vue";
 import EditSocialLinks from "@/components/home/EditSocialLinks.vue";
 import EditCourse from "@/components/courses/EditCourse.vue";
+import AddNewCourse from "@/components/courses/AddNewCourse.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -100,6 +101,11 @@ const routes: Array<RouteRecordRaw> = [
         name: "EditCourse",
         component: EditCourse,
         props: true,
+      },
+      {
+        path: "/dashboard/courses/add-new-course",
+        name: "AddNewCourse",
+        component: AddNewCourse,
       },
       {
         path: "/dashboard/utils",
