@@ -5,4 +5,6 @@ export const states: RootState = {
   project: {},
   cards: [],
   homeData: {},
+  courses: [],
+  course: {},
 };

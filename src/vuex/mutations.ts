@@ -13,4 +13,10 @@ export const mutations = {
   setHomeData(state: RootState, homeData: {}) {
     state.homeData = homeData;
   },
+  setCourses(state: RootState, courses: []) {
+    state.courses = courses;
+  },
+  setCourse(state: RootState, course: {}) {
+    state.course = course;
+  },
 };

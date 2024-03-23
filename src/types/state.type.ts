@@ -1,3 +1,4 @@
+import { ICourse } from "./course.type";
 import { IProject } from "./project.type";
 
 export type RootState = {
@@ -5,4 +6,6 @@ export type RootState = {
   project: IProject | null | {};
   cards: any[];
   homeData: {};
+  courses: ICourse[];
+  course: ICourse | {};
 };

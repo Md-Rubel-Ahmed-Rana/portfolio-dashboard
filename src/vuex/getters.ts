@@ -12,4 +12,10 @@ export const getters = {
   homeData(state: RootState) {
     return state.homeData;
   },
+  courses(state: RootState) {
+    return state.courses;
+  },
+  course(state: RootState) {
+    return state.course;
+  },
 };
