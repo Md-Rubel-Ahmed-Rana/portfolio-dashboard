@@ -7,7 +7,7 @@
             </router-link>
         </p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         <div v-for="education in educations" :key="education.id" class="bg-white rounded-lg shadow-md p-4">
             <h3 class="text-lg font-bold mb-2">{{ education.className }}</h3>
             <p class="mb-2">Board: {{ education.board }}</p>

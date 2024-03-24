@@ -7,7 +7,6 @@
                 <input type="text" id="name" v-model="formData.name"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
-
             <div class="flex justify-between gap-5">
                 <div class="mt-4 w-full">
                     <label for="duration" class="block mb-2 text-md font-semibold">Duration:</label>
