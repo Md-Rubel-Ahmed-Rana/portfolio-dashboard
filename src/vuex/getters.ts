@@ -24,4 +24,10 @@ export const getters = {
   education(state: RootState) {
     return state.education;
   },
+  experiences(state: RootState) {
+    return state.experiences;
+  },
+  experience(state: RootState) {
+    return state.experience;
+  },
 };

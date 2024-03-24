@@ -1,5 +1,6 @@
 import { ICourse } from "./course.type";
 import { IEducation } from "./education.type";
+import { IExperience } from "./experience.type";
 import { IProject } from "./project.type";
 
 export type RootState = {
@@ -11,4 +12,6 @@ export type RootState = {
   course: ICourse | {};
   educations: IEducation[];
   education: IEducation | {};
+  experiences: IExperience[];
+  experience: IExperience | {};
 };

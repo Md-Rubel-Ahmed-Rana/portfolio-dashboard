@@ -1,3 +1,4 @@
+import { experienceApi } from "./../api/experience.api";
 import { educationApi } from "./../api/education.api";
 import { courseApi } from "./../api/courses.api";
 import { fileUploadApis } from "./../api/fileUpload.api";
@@ -10,4 +11,5 @@ export const actions = {
   ...fileUploadApis,
   ...courseApi,
   ...educationApi,
+  ...experienceApi,
 };

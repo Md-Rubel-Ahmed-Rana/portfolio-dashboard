@@ -9,4 +9,6 @@ export const states: RootState = {
   course: {},
   educations: [],
   education: {},
+  experiences: [],
+  experience: {},
 };
