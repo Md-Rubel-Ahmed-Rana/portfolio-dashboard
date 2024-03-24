@@ -25,4 +25,8 @@ export const courseApi = {
     dispatch("getCourses");
     router.push("/dashboard/courses");
   },
+  async deleteCourse({ dispatch }: IDispatch, id: string) {
+    await axios.delete(`${baseApi}/course/delete/${id}`);
+    dispatch("getCourses");
+  },
 };
