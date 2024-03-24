@@ -15,9 +15,14 @@ export const educationApi = {
   },
   async updateEducation(
     { dispatch }: IDispatch,
-    { courseId, updatedData }: { courseId: string; updatedData: ICourse }
+    { id, updatedData }: { id: string; updatedData: ICourse }
   ) {
-    await axios.patch(`${baseApi}/education/update/${courseId}`, updatedData);
+    await axios.patch(`${baseApi}/education/update/${id}`, updatedData);
+    router.push("/dashboard/educations");
+  },
+  async addNewEducation({ dispatch }: IDispatch, data: ICourse) {
+    await axios.post(`${baseApi}/education/add`, data);
+    dispatch("getEducations");
     router.push("/dashboard/educations");
   },
 };

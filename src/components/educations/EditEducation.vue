@@ -54,12 +54,13 @@ export default {
         ...mapState(["education"])
     },
     methods: {
-        ...mapActions(["getEducation"]),
+        ...mapActions(["getEducation", "updateEducation"]),
         getSingleEducation(){
             this.getEducation(this.id)
         },
         handleEditEducation(){
-         console.log(this.formData);   
+         console.log(this.formData); 
+            this.updateEducation({ id: this.id, updatedData : this.formData})  
         }
     },
     mounted(){
