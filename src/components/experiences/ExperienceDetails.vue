@@ -37,10 +37,11 @@
             </p>
         </div>
         <div class="flex items-center gap-3">
-            <button @click="editExperience(experience)"
-                class="bg-yellow-500  hover:bg-yellow-700 text-white font-bold py-2 px-10 rounded">
-                Edit
-            </button>
+            <router-link :to="`/dashboard/experiences/edit/${experience.id}`">
+                <button class="bg-yellow-500  hover:bg-yellow-700 text-white font-bold py-2 px-10 rounded">
+                    Edit
+                </button>
+            </router-link>
             <button @click="deleteExperience(experience.id)"
                 class="bg-red-500  hover:bg-red-700 text-white font-bold py-2 px-10 rounded">
                 Delete

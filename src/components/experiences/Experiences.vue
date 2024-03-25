@@ -20,18 +20,19 @@
             <p class="mb-4"><span class="font-semibold">LinkedIn:</span> <a :href="experience.linkedIn"
                     class="text-blue-500 hover:underline">{{ experience.linkedIn }}</a>
             </p>
-            <div class="flex justify-between items-center gap-3">
-                <router-link :to="`/dashboard/experiences/${experience.id}`">
+            <div class="flex justify-between items-center gap-3 w-full">
+                <router-link class="w-1/3" :to="`/dashboard/experiences/${experience.id}`">
                     <button class="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Details
                     </button>
                 </router-link>
-                <button @click="editExperience(experience)"
-                    class="bg-yellow-500 w-full hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                    Edit
-                </button>
+                <router-link class="w-1/3" :to=" `/dashboard/experiences/edit/${experience.id}`">
+                    <button class="bg-yellow-500 w-full hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                        Edit
+                    </button>
+                </router-link>
                 <button @click="deleteExperience(experience.id)"
-                    class="bg-red-500 w-full hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    class="bg-red-500 w-1/3 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                     Delete
                 </button>
             </div>
@@ -48,9 +49,6 @@ export default {
     },
     methods: {
         ...mapActions(["getExperiences", "deleteExperience"]),
-        editExperience(experience) {
-            console.log("Edit:", experience);
-        }
     },
     created() {
         this.getExperiences();

@@ -64,7 +64,6 @@ export default {
       this.addNewProject(this.formData )
     }
   },
-
   data() {
     return {
       formData: {
