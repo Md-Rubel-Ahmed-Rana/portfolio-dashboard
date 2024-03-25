@@ -3,42 +3,43 @@
         <h3 class="text-2xl font-semibold">Edit course</h3>
         <form @submit.prevent="handleAddCourse">
             <div class="mt-4">
-                <label for="name" class="block mb-2 text-md font-semibold">Course Name:</label>
-                <input type="text" id="name" v-model="formData.name"
+                <label for="name" class="block mb-2 text-md font-semibold">Course name:</label>
+                <input placeholder="Enter your course name" type="text" id="name" v-model="formData.name"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
 
             <div class="flex justify-between gap-5">
                 <div class="mt-4 w-full">
                     <label for="duration" class="block mb-2 text-md font-semibold">Duration:</label>
-                    <input type="text" id="duration" v-model="formData.duration"
+                    <input placeholder="Enter course duration" type="text" id="duration" v-model="formData.duration"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
                 <div class="mt-4 w-full">
-                    <label for="startDate" class="block mb-2 text-md font-semibold">Start Date:</label>
+                    <label for="startDate" class="block mb-2 text-md font-semibold">Start date:</label>
                     <input type="date" id="startDate" v-model="formData.startDate"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
                 <div class="mt-4 w-full">
-                    <label for="endDate" class="block mb-2 text-md font-semibold">End Date:</label>
+                    <label for="endDate" class="block mb-2 text-md font-semibold">End date:</label>
                     <input type="date" id="endDate" v-model="formData.endDate"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
             </div>
             <div class="flex justify-between gap-5 mb-4">
                 <div class="mt-4 w-4/6">
-                    <label for="institute" class="block mb-2 text-md font-semibold">Institute:</label>
-                    <input type="text" id="institute" v-model="formData.institute"
+                    <label for="institute" class="block mb-2 text-md font-semibold">Institute name:</label>
+                    <input placeholder="Enter your course institute name" type="text" id="institute"
+                        v-model="formData.institute"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
                 <div class="mt-4 w-1/6">
                     <label for="passingYear" class="block mb-2 text-md font-semibold">Passing Year:</label>
-                    <input type="text" id="passingYear" v-model="formData.passingYear"
+                    <input placeholder="Enter passing year" type="text" id="passingYear" v-model="formData.passingYear"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
                 <div class="mt-4 w-1/6">
                     <label for=" result" class="block mb-2 text-md font-semibold">Result:</label>
-                    <input type="text" id="result" v-model="formData.result"
+                    <input placeholder="Enter your result" type="text" id="result" v-model="formData.result"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
 
@@ -92,7 +93,7 @@ export default {
                 duration: "",
                 startDate: "",
                 endDate: "",
-                passingYear: 0,
+                passingYear: null,
                 result: "",
                 institute: ""
             },

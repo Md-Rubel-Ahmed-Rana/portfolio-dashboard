@@ -3,29 +3,29 @@
         <h3 class="text-2xl font-semibold">Add New Education</h3>
         <form @submit.prevent="handleAddEducation">
             <div class="mt-4">
-                <label for="name" class="block mb-2 text-md font-semibold">Class name:</label>
-                <input type="text" id="name" v-model="formData.className"
+                <label for="className" class="block mb-2 text-md font-semibold">Class name:</label>
+                <input placeholder="Enter your class name" type="text" id="className" v-model="formData.className"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
             <div class="mt-4">
                 <label for="institute" class="block mb-2 text-md font-semibold">Institute name:</label>
-                <input type="text" id="name" v-model="formData.institute"
+                <input placeholder="Enter your institute name" type="text" id="institute" v-model="formData.institute"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
             <div class="flex justify-between gap-5 mb-4">
-                <div class="mt-4 w-4/6">
+                <div class="mt-4 w-3/6">
                     <label for="board" class="block mb-2 text-md font-semibold">Board:</label>
-                    <input type="text" id="institute" v-model="formData.board"
+                    <input placeholder="Enter your board name" type="text" id="board" v-model="formData.board"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
                 <div class="mt-4 w-1/6">
                     <label for="passingYear" class="block mb-2 text-md font-semibold">Passing Year:</label>
-                    <input type="text" id="passingYear" v-model="formData.passingYear"
+                    <input placeholder="Enter passing year" type="text" id="passingYear" v-model="formData.passingYear"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/6">
-                    <label for=" result" class="block mb-2 text-md font-semibold">Result:</label>
-                    <input type="text" id="result" v-model="formData.result"
+                <div class="mt-4 w-2/6">
+                    <label for="result" class="block mb-2 text-md font-semibold">Result:</label>
+                    <input placeholder="Enter result. e.g: 3.50" type="text" id="result" v-model="formData.result"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
             </div>
@@ -54,7 +54,7 @@ export default {
             formData: {
                 className: "",
                 board: "",
-                passingYear: 0,
+                passingYear: "",
                 result: "",
                 institute: "",
             }
