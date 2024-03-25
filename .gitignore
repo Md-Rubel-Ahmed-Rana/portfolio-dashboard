@@ -2,8 +2,7 @@
 node_modules
 /dist
 
-noets.txt
-
+requirements.txt
 # local env files
 .env
 .env.local

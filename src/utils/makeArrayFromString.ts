@@ -1,7 +1,10 @@
 const makeArrayFromString = (text: string = "") => {
-  const array = text?.split(",");
-
-  return array;
+  if (text) {
+    const array = text?.split(",");
+    return array;
+  } else {
+    return "";
+  }
 };
 
 export default makeArrayFromString;

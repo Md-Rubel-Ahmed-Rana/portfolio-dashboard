@@ -30,19 +30,25 @@
             <div class="flex justify-between gap-5">
                 <div class="mt-4 w-1/3">
                     <label for="workLocation" class="block mb-2 text-md font-semibold">Work Location:</label>
-                    <select type="text" id="workLocation" v-model="formData.workLocation"
+                    <select id="workLocation" v-model="formData.workLocation"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                         <option value="Onsite">Onsite</option>
                         <option value="Remote">Remote</option>
                         <option value="Hybrid">Hybrid</option>
                     </select>
                 </div>
-                <div class="mt-4 w-1/3">
+                <div class="mt-4 w-1/4">
+                    <label for="size" class="block mb-2 text-md font-semibold">Company size:</label>
+                    <input type="text" id="size" v-model="formData.size"
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="mt-4 w-1/4">
                     <label for="startDate" class="block mb-2 text-md font-semibold">Start Date:</label>
                     <input type="date" id="startDate" v-model="formData.startDate"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/3">
+
+                <div class="mt-4 w-1/4">
                     <label for="endDate" class="block mb-2 text-md font-semibold">End Date:</label>
                     <input type="date" id="endDate" v-model="formData.endDate"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -95,14 +101,14 @@ export default {
         ...mapState(["experience"])
     },
     methods: {
-        ...mapActions(["getExperience"]),
+        ...mapActions(["getExperience", "updateExperience"]),
         getSingleExperience() {
             this.getExperience(this.id)
         },
         handleEditExperience() {
             this.formData.responsibilities = makeArrayFromString(this.formData.responsibilities)
             this.formData.learnedNewTech = makeArrayFromString(this.formData.learnedNewTech)
-            console.log(this.formData);
+            this.updateExperience({ id: this.id, updatedData: this.formData });
         }
     },
     mounted() {
@@ -164,13 +170,12 @@ export default {
                     this.formData.linkedIn = data.linkedIn
                     this.formData.startDate = data.startDate?.slice(0, 10)
                     this.formData.endDate = data.endDate?.slice(0, 10)
-                    this.formData.responsibilities = data.responsibilities?.join(",");
-                    this.formData.learnedNewTech = data.learnedNewTech?.join(",");
+                    this.formData.responsibilities = data.responsibilities?.join(", ");
+                    this.formData.learnedNewTech = data.learnedNewTech?.join(", ");
                 }
             }
         }
     }
-
 }
 
 </script>

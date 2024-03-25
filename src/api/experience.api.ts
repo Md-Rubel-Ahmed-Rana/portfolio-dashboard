@@ -18,10 +18,15 @@ export const experienceApi = {
     { id, updatedData }: { id: string; updatedData: IExperience }
   ) {
     await axios.patch(`${baseApi}/experience/update/${id}`, updatedData);
-    router.push("/dashboard/experiences");
+    router.push(`/dashboard/experiences/${id}`);
   },
   async addNewExperience({ dispatch }: IDispatch, data: IExperience) {
     await axios.post(`${baseApi}/experience/add`, data);
+    dispatch("getExperiences");
+    router.push("/dashboard/experiences");
+  },
+  async deleteExperience({ dispatch }: IDispatch, id: string) {
+    await axios.delete(`${baseApi}/experience/delete/${id}`);
     dispatch("getExperiences");
     router.push("/dashboard/experiences");
   },

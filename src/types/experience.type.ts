@@ -1,6 +1,6 @@
 export type IExperience = {
   name: string;
-  size: number;
+  size: string;
   type: string;
   designation: string;
   workLocation: string;
