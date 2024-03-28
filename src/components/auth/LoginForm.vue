@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import {mapActions} from "vuex"
 export default {
   data() {
     return {
@@ -32,10 +33,10 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["loginUser"]),
     submitForm() {
-      // Handle form submission logic here
-      console.log('Email:', this.email);
-      console.log('Password:', this.password);
+      const credentials = { email: this.email, password: this.password}
+      this.loginUser(credentials)
     }
   }
 }
