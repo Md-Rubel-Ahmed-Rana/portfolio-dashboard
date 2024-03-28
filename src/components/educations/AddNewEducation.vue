@@ -42,11 +42,12 @@
 
 <script>
 import { mapActions } from "vuex"
+
 export default {
     methods: {
         ...mapActions(["addNewEducation"]),
         handleAddEducation() {
-            this.addNewEducation(this.formData)
+                this.addNewEducation(this.formData)
         }
     },
     data() {
@@ -57,10 +58,10 @@ export default {
                 passingYear: "",
                 result: "",
                 institute: "",
-            }
+            },
+            validation: {}
         }
     },
-
 }
 
 </script>

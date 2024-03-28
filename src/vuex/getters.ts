@@ -30,4 +30,10 @@ export const getters = {
   experience(state: RootState) {
     return state.experience;
   },
+  users(state: RootState) {
+    return state.users;
+  },
+  user(state: RootState) {
+    return state.user;
+  },
 };

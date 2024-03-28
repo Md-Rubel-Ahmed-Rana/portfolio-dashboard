@@ -1,3 +1,4 @@
+import { IUser } from "./../types/user.type";
 import { IExperience } from "./../types/experience.type";
 import { ICourse } from "@/types/course.type";
 import { IEducation } from "./../types/education.type";
@@ -33,5 +34,11 @@ export const mutations = {
   },
   setExperience(state: RootState, experience: IExperience) {
     state.experience = experience;
+  },
+  setUsers(state: RootState, users: IUser[]) {
+    state.users = users;
+  },
+  setUser(state: RootState, user: IUser) {
+    state.user = user;
   },
 };

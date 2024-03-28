@@ -1,3 +1,4 @@
+import { userApi } from "./../api/user.api";
 import { experienceApi } from "./../api/experience.api";
 import { educationApi } from "./../api/education.api";
 import { courseApi } from "./../api/courses.api";
@@ -6,6 +7,7 @@ import { utilApis } from "./../api/util.api";
 import { projectApis } from "./../api/projects.api";
 
 export const actions = {
+  ...userApi,
   ...projectApis,
   ...utilApis,
   ...fileUploadApis,

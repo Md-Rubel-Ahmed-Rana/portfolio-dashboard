@@ -2,6 +2,7 @@ import { ICourse } from "./course.type";
 import { IEducation } from "./education.type";
 import { IExperience } from "./experience.type";
 import { IProject } from "./project.type";
+import { IUser } from "./user.type";
 
 export type RootState = {
   projects: IProject[];
@@ -14,4 +15,6 @@ export type RootState = {
   education: IEducation | {};
   experiences: IExperience[];
   experience: IExperience | {};
+  users: IUser[];
+  user: IUser | {};
 };

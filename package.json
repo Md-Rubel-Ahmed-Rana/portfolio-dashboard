@@ -12,8 +12,10 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "axios": "^1.6.8",
     "core-js": "^3.8.3",
+    "vee-validate": "3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vue-tailwind": "^2.5.1",
     "vue-toastification": "^1.7.14",
     "vuex": "^4.0.0"
   },
