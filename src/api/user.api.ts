@@ -9,7 +9,11 @@ export const userApi = {
   async registerUser({ dispatch }: IDispatch, user: IUser) {
     const res = await axios.post(`${baseApi}/user/register`, user);
     if (res?.data) {
-      router.push("/login");
+      if (!user.isVerified) {
+        router.push("/login");
+      } else {
+        router.push("/dashboard/users");
+      }
     }
   },
   async loginUser(
