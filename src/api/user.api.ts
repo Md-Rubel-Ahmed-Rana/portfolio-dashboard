@@ -16,6 +16,17 @@ export const userApi = {
       }
     }
   },
+
+  async updateUser(
+    { dispatch }: IDispatch,
+    { id, user }: { id: string; user: IUser }
+  ) {
+    const res = await axios.patch(`${baseApi}/user/update/${id}`, user);
+    if (res?.data) {
+      router.push("/dashboard/users");
+    }
+  },
+
   async loginUser(
     { dispatch }: IDispatch,
     credentials: { email: string; password: string }
@@ -25,8 +36,14 @@ export const userApi = {
       router.push("/dashboard");
     }
   },
+
   async getAllUsers({ commit }: ICommit) {
     const res = await axios.get(`${baseApi}/user`);
     commit("setUsers", res?.data?.data);
+  },
+
+  async getSingleUser({ commit }: ICommit, id: string) {
+    const res = await axios.get(`${baseApi}/user/single/${id}`);
+    commit("setUser", res?.data?.data);
   },
 };
