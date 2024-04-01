@@ -46,4 +46,23 @@ export const userApi = {
     const res = await axios.get(`${baseApi}/user/single/${id}`);
     commit("setUser", res?.data?.data);
   },
+  async verifyUser({ dispatch }: IDispatch, id: string) {
+    await axios.patch(`${baseApi}/user/verify/${id}`);
+    dispatch("getAllUsers");
+  },
+
+  async unVerifyUser({ dispatch }: IDispatch, id: string) {
+    await axios.patch(`${baseApi}/user/unverify/${id}`);
+    dispatch("getAllUsers");
+  },
+
+  async suspendUser({ dispatch }: IDispatch, id: string) {
+    await axios.patch(`${baseApi}/user/suspend/${id}`);
+    dispatch("getAllUsers");
+  },
+
+  async unSuspendUser({ dispatch }: IDispatch, id: string) {
+    await axios.patch(`${baseApi}/user/unsuspend/${id}`);
+    dispatch("getAllUsers");
+  },
 };

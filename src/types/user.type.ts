@@ -4,4 +4,5 @@ export type IUser = {
   phoneNumber: string;
   role: string;
   isVerified: boolean;
+  suspend: boolean;
 };

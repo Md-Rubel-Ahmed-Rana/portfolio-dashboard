@@ -20,9 +20,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="user in users" :key="user.id" class="bg-white border-b text-left rounded-md"
-                    title="Click to update user">
-                    <td class="px-4 py-2 hover:underline cursor-pointer hover:text-blue-600">
+                <tr v-for="user in users" :key="user.id" class="bg-white border-b text-left rounded-md">
+                    <td title="Click to update user"
+                        class="px-4 py-2 hover:underline cursor-pointer hover:text-blue-600">
                         <router-link :to="`/dashboard/users/user/edit/${user.id}`">
                             {{ user.name }}
                         </router-link>
@@ -31,12 +31,15 @@
                     <td class="px-4 py-2">{{ user.phoneNumber }}</td>
                     <td class="px-4 py-2">{{ user.role }}</td>
                     <td class="px-4 py-2">{{ user.isVerified ? "Yes" : "No" }}</td>
-                    <td class="px-4 py-2 flex gap-3 justify-between">
-                        <button v-if="!user.isVerified"
-                            class="bg-green-500 w-full px-2 rounded-md text-white">Verify</button>
-                        <button v-if="user.isVerified"
-                            class="bg-green-500 w-full px-2 rounded-md text-white">Unverify</button>
-                        <button class="bg-red-500 px-2 rounded-md w-full text-white">Suspend</button>
+                    <td class="px-4 py-2 flex gap-3 justify-between text-sm">
+                        <button @click="handleVerifyUser(user.id)" v-if="!user.isVerified"
+                            class="bg-green-500 px-2 rounded-md text-white w-1/2">Verify</button>
+                        <button @click="handleUnVerifyUser(user.id)" v-if="user.isVerified"
+                            class="bg-green-500 w-1/2 px-2 rounded-md text-white">Unverify</button>
+                        <button @click="handleSuspendUser(user.id)" v-if="!user.suspend"
+                            class="bg-red-500 px-2 rounded-md w-full text-white">Suspend</button>
+                        <button @click="handleUnSuspendUser(user.id)" v-if="user.suspend"
+                            class="bg-red-500 px-2 rounded-md w-full text-white">Unsuspend</button>
                     </td>
                 </tr>
             </tbody>
@@ -52,7 +55,19 @@ export default {
         ...mapState(["users"])
     },
     methods: {
-        ...mapActions(["getAllUsers"])
+        ...mapActions(["getAllUsers", "verifyUser", "unVerifyUser", "suspendUser", "unSuspendUser"]),
+        handleVerifyUser(id){
+            this.verifyUser(id)
+        },
+        handleUnVerifyUser(id){
+            this.unVerifyUser(id)
+        },
+        handleSuspendUser(id){
+            this.suspendUser(id)
+        },
+        handleUnSuspendUser(id){
+            this.unSuspendUser(id)
+        }
     },
     created() {
         this.getAllUsers();
