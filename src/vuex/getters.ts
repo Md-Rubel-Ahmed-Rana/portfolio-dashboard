@@ -36,4 +36,10 @@ export const getters = {
   user(state: RootState) {
     return state.user;
   },
+  updates(state: RootState) {
+    return state.updates;
+  },
+  update(state: RootState) {
+    return state.update;
+  },
 };

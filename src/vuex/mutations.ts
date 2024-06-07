@@ -4,6 +4,7 @@ import { ICourse } from "@/types/course.type";
 import { IEducation } from "./../types/education.type";
 import { RootState } from "./../types/state.type";
 import { IProject } from "./../types/project.type";
+import { IUpdate } from "@/types/update.type";
 export const mutations = {
   setProjects(state: RootState, projects: IProject[]) {
     state.projects = projects;
@@ -40,5 +41,11 @@ export const mutations = {
   },
   setUser(state: RootState, user: IUser) {
     state.user = user;
+  },
+  setUpdates(state: RootState, updates: IUpdate[]) {
+    state.updates = updates;
+  },
+  setUpdate(state: RootState, update: IUpdate) {
+    state.update = update;
   },
 };

@@ -13,4 +13,6 @@ export const states: RootState = {
   experience: {},
   users: [],
   user: {},
+  updates: [],
+  update: {},
 };

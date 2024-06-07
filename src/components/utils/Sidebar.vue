@@ -1,5 +1,5 @@
 <template>
-  <aside class="">
+  <aside class="sticky top-3">
     <router-link to="/dashboard">
        <h3 class="text-xl font-semibold mb-2 border px-5 py-2 rounded-md">Dashboard</h3>
     </router-link>
