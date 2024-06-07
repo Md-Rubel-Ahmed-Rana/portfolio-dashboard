@@ -3,9 +3,6 @@
     <div>
         <BannerContent :bannerSection="bannerSection" />
     </div>
-   <div>
-     <AboutContent :aboutSection="aboutSection" />
-   </div>
     <div>
         <Skills :skills="skills" />
     </div>
@@ -18,14 +15,12 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import BannerContent from './BannerContent.vue';
-import AboutContent from './AboutContent.vue';
 import Skills from './Skills.vue';
 import SocialLinks from './SocialLinks.vue';
 
 export default {
   components: {
     BannerContent,
-    AboutContent,
     Skills,
     SocialLinks
   },
@@ -51,7 +46,7 @@ export default {
       immediate: true,
       handler(newVal) {
         if (newVal) {
-          this.bannerSection = newVal.bannerSection;
+          this.bannerSection = newVal;
           this.aboutSection = newVal.aboutSection;
           this.skills = newVal.skills;
           this.socialLinks = newVal.socialLinks;

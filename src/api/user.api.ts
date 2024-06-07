@@ -2,8 +2,7 @@ import axios from "axios";
 import { IUser } from "./../types/user.type";
 import { ICommit, IDispatch } from "./../types/vuex.types";
 import router from "@/router";
-
-const baseApi = process.env.VUE_APP_BASE_API;
+import { authHeader, baseApi } from ".";
 
 export const userApi = {
   async registerUser({ dispatch }: IDispatch, user: IUser) {
@@ -21,7 +20,9 @@ export const userApi = {
     { dispatch }: IDispatch,
     { id, user }: { id: string; user: IUser }
   ) {
-    const res = await axios.patch(`${baseApi}/user/update/${id}`, user);
+    const res = await axios.patch(`${baseApi}/user/update/${id}`, user, {
+      headers: authHeader,
+    });
     if (res?.data) {
       router.push("/dashboard/users");
     }
@@ -38,31 +39,37 @@ export const userApi = {
   },
 
   async getAllUsers({ commit }: ICommit) {
-    const res = await axios.get(`${baseApi}/user`);
+    const res = await axios.get(`${baseApi}/user`, { headers: authHeader });
     commit("setUsers", res?.data?.data);
   },
 
   async getSingleUser({ commit }: ICommit, id: string) {
-    const res = await axios.get(`${baseApi}/user/single/${id}`);
+    const res = await axios.get(`${baseApi}/user/single/${id}`, {
+      headers: authHeader,
+    });
     commit("setUser", res?.data?.data);
   },
   async verifyUser({ dispatch }: IDispatch, id: string) {
-    await axios.patch(`${baseApi}/user/verify/${id}`);
+    await axios.patch(`${baseApi}/user/verify/${id}`, { headers: authHeader });
     dispatch("getAllUsers");
   },
 
   async unVerifyUser({ dispatch }: IDispatch, id: string) {
-    await axios.patch(`${baseApi}/user/unverify/${id}`);
+    await axios.patch(`${baseApi}/user/unverify/${id}`, {
+      headers: authHeader,
+    });
     dispatch("getAllUsers");
   },
 
   async suspendUser({ dispatch }: IDispatch, id: string) {
-    await axios.patch(`${baseApi}/user/suspend/${id}`);
+    await axios.patch(`${baseApi}/user/suspend/${id}`, { headers: authHeader });
     dispatch("getAllUsers");
   },
 
   async unSuspendUser({ dispatch }: IDispatch, id: string) {
-    await axios.patch(`${baseApi}/user/unsuspend/${id}`);
+    await axios.patch(`${baseApi}/user/unsuspend/${id}`, {
+      headers: authHeader,
+    });
     dispatch("getAllUsers");
   },
 };
