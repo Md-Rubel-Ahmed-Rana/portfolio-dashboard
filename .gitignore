@@ -1,8 +1,6 @@
 .DS_Store
 node_modules
-/dist
 
-requirements.txt
 # local env files
 .env
 .env.local
@@ -22,3 +20,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
+
+.vercel

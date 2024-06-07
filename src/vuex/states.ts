@@ -15,4 +15,6 @@ export const states: RootState = {
   user: {},
   updates: [],
   update: {},
+  services: [],
+  service: {},
 };
