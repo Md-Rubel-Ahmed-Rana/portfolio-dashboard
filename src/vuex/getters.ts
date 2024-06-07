@@ -42,4 +42,10 @@ export const getters = {
   update(state: RootState) {
     return state.update;
   },
+  services(state: RootState) {
+    return state.services;
+  },
+  service(state: RootState) {
+    return state.service;
+  },
 };
