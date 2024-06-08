@@ -48,4 +48,10 @@ export const getters = {
   service(state: RootState) {
     return state.service;
   },
+  comments(state: RootState) {
+    return state.comments;
+  },
+  comment(state: RootState) {
+    return state.comment;
+  },
 };

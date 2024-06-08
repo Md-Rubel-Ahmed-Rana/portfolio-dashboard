@@ -1,3 +1,4 @@
+import { IComment } from "./comment.type";
 import { ICourse } from "./course.type";
 import { IEducation } from "./education.type";
 import { IExperience } from "./experience.type";
@@ -23,4 +24,6 @@ export type RootState = {
   update: IUpdate | {};
   services: IService[];
   service: IService | {};
+  comments: IComment[];
+  comment: IComment | {};
 };
