@@ -19,4 +19,6 @@ export const states: RootState = {
   service: {},
   comments: [],
   comment: {},
+  feedbacks: [],
+  feedback: {},
 };

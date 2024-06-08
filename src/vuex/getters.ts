@@ -54,4 +54,10 @@ export const getters = {
   comment(state: RootState) {
     return state.comment;
   },
+  feedbacks(state: RootState) {
+    return state.feedbacks;
+  },
+  feedback(state: RootState) {
+    return state.feedback;
+  },
 };

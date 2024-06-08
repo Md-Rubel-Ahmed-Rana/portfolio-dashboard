@@ -12,6 +12,7 @@ import { publicRoutes } from "./public.routes";
 import { userRoutes } from "./user.routes";
 import { updateRoutes } from "./update.routes";
 import { commentRoutes } from "./comment.routes";
+import { feedbackRoutes } from "./feedback.routes";
 
 const dashboardChildrenRoutes: Array<RouteRecordRaw> = [];
 
@@ -40,7 +41,8 @@ const routes: Array<RouteRecordRaw> = [
       serviceRoutes,
       userRoutes,
       updateRoutes,
-      commentRoutes
+      commentRoutes,
+      feedbackRoutes
     ),
   },
 ];
