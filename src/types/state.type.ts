@@ -2,6 +2,7 @@ import { IComment } from "./comment.type";
 import { ICourse } from "./course.type";
 import { IEducation } from "./education.type";
 import { IExperience } from "./experience.type";
+import { IFeedback } from "./feedback.type";
 import { IProject } from "./project.type";
 import { IService } from "./service.type";
 import { IUpdate } from "./update.type";
@@ -26,4 +27,6 @@ export type RootState = {
   service: IService | {};
   comments: IComment[];
   comment: IComment | {};
+  feedbacks: IFeedback[];
+  feedback: IFeedback | {};
 };
