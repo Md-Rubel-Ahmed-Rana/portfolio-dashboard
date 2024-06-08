@@ -17,4 +17,6 @@ export const states: RootState = {
   update: {},
   services: [],
   service: {},
+  comments: [],
+  comment: {},
 };

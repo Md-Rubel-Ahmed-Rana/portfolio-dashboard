@@ -11,6 +11,7 @@ import { serviceRoutes } from "./service.routes";
 import { publicRoutes } from "./public.routes";
 import { userRoutes } from "./user.routes";
 import { updateRoutes } from "./update.routes";
+import { commentRoutes } from "./comment.routes";
 
 const dashboardChildrenRoutes: Array<RouteRecordRaw> = [];
 
@@ -38,7 +39,8 @@ const routes: Array<RouteRecordRaw> = [
       utilRoutes,
       serviceRoutes,
       userRoutes,
-      updateRoutes
+      updateRoutes,
+      commentRoutes
     ),
   },
 ];
