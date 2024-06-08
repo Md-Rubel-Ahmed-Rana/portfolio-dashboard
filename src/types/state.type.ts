@@ -1,3 +1,4 @@
+import { IBlog } from "./blog.interface";
 import { IComment } from "./comment.type";
 import { ICourse } from "./course.type";
 import { IEducation } from "./education.type";
@@ -29,4 +30,6 @@ export type RootState = {
   comment: IComment | {};
   feedbacks: IFeedback[];
   feedback: IFeedback | {};
+  blogs: IBlog[];
+  blog: IBlog | {};
 };

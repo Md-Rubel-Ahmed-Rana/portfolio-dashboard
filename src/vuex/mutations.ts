@@ -8,6 +8,7 @@ import { IUpdate } from "@/types/update.type";
 import { IService } from "@/types/service.type";
 import { IComment } from "@/types/comment.type";
 import { IFeedback } from "@/types/feedback.type";
+import { IBlog } from "@/types/blog.interface";
 export const mutations = {
   setProjects(state: RootState, projects: IProject[]) {
     state.projects = projects;
@@ -68,5 +69,11 @@ export const mutations = {
   },
   setFeedback(state: RootState, feedback: IFeedback) {
     state.feedback = feedback;
+  },
+  setBlogs(state: RootState, blogs: IBlog[]) {
+    state.blogs = blogs;
+  },
+  setBlog(state: RootState, blog: IBlog) {
+    state.blog = blog;
   },
 };

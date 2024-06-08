@@ -7,8 +7,8 @@
             </router-link>
         </p>
     </div>
-    <ul v-for="update in updates" class="space-y-8 mt-10">
-        <li key="{{ update.id }}" class="shadow rounded-lg p-4">
+    <ul v-for="update in updates" class="space-y-8 mt-5 shadow border rounded-md p-5" :key="update.id">
+        <li>
             <h4 className="text-lg text-gray-600 font-medium mb-2">{{ update.title }}</h4>
             <p className="text-sm mb-2 text-gray-600">Category: {{ update.category }}</p>
             <p className="text-sm mb-2 text-gray-600">Status: {{ update.status }}</p>

@@ -7,7 +7,7 @@
       </router-link> 
       </p>
     </div>
-    <div v-for="service in services" class="shadow-md p-5 rounded-md mb-5" >
+    <div v-for="service in services" class="shadow-md p-5 rounded-md my-5 border" >
         <h5 class="text-xl font-semibold text-gray-600">{{ service.name }}</h5>
         <p class="text-md text-gray-500">{{ service.description }}</p>
          <router-link :to="`/dashboard/services/edit/${service.id}`">

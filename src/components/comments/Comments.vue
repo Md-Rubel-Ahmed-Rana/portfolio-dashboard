@@ -13,7 +13,7 @@
         </select>
       </p>
     </div>
-    <div v-for="comment in comments" :key="comment.id" class="shadow-md p-4 rounded-md mb-5">
+    <div v-for="comment in comments" :key="comment.id" class="shadow-md p-4 rounded-md border mb-5">
         <h5> <span class="text-lg font-semibold text-gray-600">Name: </span> {{ comment.name }}</h5>
         <p> <span class="text-lg font-semibold text-gray-600">Comment: </span> {{ comment.comment }}</p>
         <h6> <span class="text-lg font-semibold text-gray-600">Post: </span>{{ comment.postId.title || comment.postId.name }} </h6>
