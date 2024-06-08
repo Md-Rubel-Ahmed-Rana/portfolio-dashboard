@@ -9,7 +9,7 @@
       </p>
     </div>
     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <li v-for="project in projects" :key="project.id" class="bg-white shadow-md rounded-md overflow-hidden">
+      <li v-for="project in projects" :key="project.id" class="bg-white shadow-md border rounded-md overflow-hidden">
         <img :src="project?.thumbnail" alt="Project Image" class="w-full h-40 object-cover">
         <div class="p-4">
           <h2 class="text-xl font-semibold text-gray-800">{{ project.name }}</h2>

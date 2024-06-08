@@ -60,4 +60,10 @@ export const getters = {
   feedback(state: RootState) {
     return state.feedback;
   },
+  blogs(state: RootState) {
+    return state.blogs;
+  },
+  blog(state: RootState) {
+    return state.blog;
+  },
 };

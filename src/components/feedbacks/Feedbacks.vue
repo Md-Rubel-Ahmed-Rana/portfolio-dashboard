@@ -2,7 +2,7 @@
     <div class="flex justify-between">
       <h1 class="text-3xl font-semibold mb-4">Feedbacks</h1>
     </div>
-    <div v-for="feedback in feedbacks" class="shadow-md p-5 rounded-md mb-5" :key="feedback.id">
+    <div v-for="feedback in feedbacks" class="shadow-md p-5 rounded-md border mb-5" :key="feedback.id">
         <h5> <span class="text-lg font-semibold text-gray-600">Name: </span> {{ feedback.name }}</h5>
         <p><span class="text-lg font-semibold text-gray-600">Designation: </span>{{ feedback.designation }}</p>
         <p><span class="text-lg font-semibold text-gray-600">Company: </span>{{ feedback.company }}</p>

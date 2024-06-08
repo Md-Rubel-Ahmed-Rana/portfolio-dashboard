@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col gap-4">
-    <div>
+    <div class="border rounded-md">
         <BannerContent :bannerSection="bannerSection" />
     </div>
-    <div>
+    <div class="border rounded-md">
         <Skills :skills="skills" />
     </div>
-    <div>
+    <div class="border rounded-md">
         <SocialLinks :socialLinks="socialLinks" />
     </div>
   </div>

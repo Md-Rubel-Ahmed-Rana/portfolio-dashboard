@@ -9,6 +9,7 @@ import { updateApi } from "@/api/update.api";
 import { serviceApi } from "@/api/service.api";
 import { commentApi } from "@/api/comment.api";
 import { feedbackApi } from "@/api/feedback.api";
+import { blogApi } from "@/api/blog.api";
 
 export const actions = {
   ...userApi,
@@ -22,4 +23,5 @@ export const actions = {
   ...serviceApi,
   ...commentApi,
   ...feedbackApi,
+  ...blogApi,
 };
