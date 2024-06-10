@@ -53,8 +53,6 @@ export default {
   methods: {
     ...mapActions(["registerUser"]),
     handleRegister() {
-      console.log("Clicked");
-      console.log(this.formData);
       this.registerUser(this.formData)
     }
   },

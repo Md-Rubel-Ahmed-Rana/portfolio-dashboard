@@ -29,8 +29,5 @@ export default {
   created() {
     this.getCards();
   },
-  data() {
-     console.log("Home");
-  },
 };
 </script>

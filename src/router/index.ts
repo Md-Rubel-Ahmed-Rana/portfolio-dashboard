@@ -14,6 +14,7 @@ import { updateRoutes } from "./update.routes";
 import { commentRoutes } from "./comment.routes";
 import { feedbackRoutes } from "./feedback.routes";
 import { blogRoutes } from "./blog.routes";
+import { hireMeRoutes } from "./hireMe.routes";
 
 const dashboardChildrenRoutes: Array<RouteRecordRaw> = [];
 
@@ -44,7 +45,8 @@ const routes: Array<RouteRecordRaw> = [
       updateRoutes,
       commentRoutes,
       feedbackRoutes,
-      blogRoutes
+      blogRoutes,
+      hireMeRoutes
     ),
   },
 ];

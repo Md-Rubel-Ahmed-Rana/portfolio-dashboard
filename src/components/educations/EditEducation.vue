@@ -59,7 +59,6 @@ export default {
             this.getEducation(this.id)
         },
         handleEditEducation(){
-         console.log(this.formData); 
             this.updateEducation({ id: this.id, updatedData : this.formData})  
         }
     },

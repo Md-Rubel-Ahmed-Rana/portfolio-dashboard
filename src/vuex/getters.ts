@@ -66,4 +66,10 @@ export const getters = {
   blog(state: RootState) {
     return state.blog;
   },
+  hireMes(state: RootState) {
+    return state.hireMes;
+  },
+  hireMe(state: RootState) {
+    return state.hireMe;
+  },
 };

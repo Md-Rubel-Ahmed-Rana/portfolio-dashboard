@@ -9,6 +9,7 @@ import { IService } from "@/types/service.type";
 import { IComment } from "@/types/comment.type";
 import { IFeedback } from "@/types/feedback.type";
 import { IBlog } from "@/types/blog.interface";
+import { IHireMe } from "@/types/hireMe.type";
 export const mutations = {
   setProjects(state: RootState, projects: IProject[]) {
     state.projects = projects;
@@ -75,5 +76,11 @@ export const mutations = {
   },
   setBlog(state: RootState, blog: IBlog) {
     state.blog = blog;
+  },
+  setHireMes(state: RootState, data: IHireMe[]) {
+    state.hireMes = data;
+  },
+  setHireMe(state: RootState, data: IHireMe) {
+    state.hireMe = data;
   },
 };

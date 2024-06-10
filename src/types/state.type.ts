@@ -4,6 +4,7 @@ import { ICourse } from "./course.type";
 import { IEducation } from "./education.type";
 import { IExperience } from "./experience.type";
 import { IFeedback } from "./feedback.type";
+import { IHireMe } from "./hireMe.type";
 import { IProject } from "./project.type";
 import { IService } from "./service.type";
 import { IUpdate } from "./update.type";
@@ -32,4 +33,6 @@ export type RootState = {
   feedback: IFeedback | {};
   blogs: IBlog[];
   blog: IBlog | {};
+  hireMes: IHireMe[];
+  hireMe: IHireMe | {};
 };
