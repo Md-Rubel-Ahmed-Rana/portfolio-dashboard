@@ -12,7 +12,7 @@
             class="p-4 border rounded-lg flex flex-col justify-between ">
             <div>
                 <h2 class="font-semibold mb-2"><span class="font-semibold">Company:</span> {{ experience.name }}</h2>
-                <p class="mb-4"><span class="font-semibold">Type:</span> {{ experience.type }}</p>
+                <p class="mb-4"><span class="font-semibold">Type:</span> {{ experience.workType }}</p>
                 <p class="mb-4"><span class="font-semibold">Location:</span> {{ experience.location }}</p>
                 <p class="mb-4"><span class="font-semibold">Work Location:</span> {{ experience.workLocation }}</p>
                 <p class="mb-4"><span class="font-semibold">Designation:</span> {{ experience.designation }}</p>

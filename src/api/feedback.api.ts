@@ -19,10 +19,13 @@ export const feedbackApi = {
     });
     dispatch("getFeedbacks");
   },
-  async deleteFeedback({ dispatch }: IDispatch, { id }: { id: string }) {
+  async deleteFeedback({ commit }: ICommit, { id }: { id: string }) {
     await axios.delete(`${baseApi}/feedback/delete/${id}`, {
       headers: authHeader,
     });
-    dispatch("getFeedbacks");
+    const res = await axios.get(`${baseApi}/feedback/all?filter=all`, {
+      headers: authHeader,
+    });
+    commit("setFeedbacks", res?.data?.data);
   },
 };
