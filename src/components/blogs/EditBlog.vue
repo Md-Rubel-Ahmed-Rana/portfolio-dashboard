@@ -65,7 +65,7 @@ export default {
         },
         setDefaultValues() {
             this.formData = { ...this.blog };
-            this.uploadedImage = this.blog.image; // Set uploadedImage to the blog's current image
+            this.uploadedImage = this.blog.image;
         },
         async handleEditBlog() {
             let imageUrl = this.uploadedImage;
