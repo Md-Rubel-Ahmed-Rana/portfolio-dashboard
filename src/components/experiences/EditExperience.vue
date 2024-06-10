@@ -1,6 +1,13 @@
 <template>
-    <div class="shadow-lg px-5 pb-8 rounded-md">
-        <h3 class="text-2xl font-semibold">Edit Experience</h3>
+    <div class="shadow-lg p-5 border rounded-md">
+        <div class="flex justify-between">
+            <h1 class="text-3xl font-semibold mb-4">Edit Experience</h1>
+            <p>
+                <router-link to="/dashboard/experiences">
+                    <button class="bg-blue-600 px-5 py-2 rounded-md text-white">Back</button>
+                </router-link>
+            </p>
+        </div>
         <form @submit.prevent="handleEditExperience">
             <div class="mt-4">
                 <label for="name" class="block mb-2 text-md font-semibold">Company Name:</label>

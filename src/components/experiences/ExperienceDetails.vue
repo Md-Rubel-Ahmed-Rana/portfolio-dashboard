@@ -1,7 +1,13 @@
 <template>
     <div class="p-4 border rounded-lg">
+    <div class="flex justify-between items-center mb-4">
+        <h4 class="text-2xl font-semibold text-gray-600">Add New Experience</h4>
+        <router-link to="/dashboard/experiences">
+            <button class="bg-blue-500 px-10 py-2 rounded-md text-white">Back</button>
+        </router-link>
+    </div>
         <h2 class="font-semibold mb-2"><span class="font-semibold">Company:</span> {{ experience.name }}</h2>
-        <p class="mb-4"><span class="font-semibold">Type:</span> {{ experience.type }}</p>
+        <p class="mb-4"><span class="font-semibold">Type:</span> {{ experience.workType }}</p>
         <p class="mb-4"><span class="font-semibold">Location:</span> {{ experience.location }}</p>
         <p class="mb-4"><span class="font-semibold">Work Location:</span> {{ experience.workLocation }}</p>
         <p class="mb-4"><span class="font-semibold">Designation:</span> {{ experience.designation }}</p>
@@ -42,7 +48,7 @@
                     Edit
                 </button>
             </router-link>
-            <button @click="deleteExperience(experience.id)"
+            <button @click="handleDeleteExperience(experience.id)"
                 class="bg-red-500  hover:bg-red-700 text-white font-bold py-2 px-10 rounded">
                 Delete
             </button>
@@ -64,10 +70,13 @@ export default {
         ...mapState(["experience"])
     },
     methods: {
-        ...mapActions(["getExperience"]),
+        ...mapActions(["getExperience", "deleteExperience"]),
         fetchExperienceDetails() {
             this.getExperience(this.id);
         },
+        handleDeleteExperience(id) {
+            this.deleteExperience(id)
+        }
     },
     mounted() {
         this.fetchExperienceDetails();

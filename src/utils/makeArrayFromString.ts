@@ -1,5 +1,5 @@
 const makeArrayFromString = (text: string = "") => {
-  if (text) {
+  if (typeof text === "string") {
     const array = text?.split(",");
     return array;
   } else {

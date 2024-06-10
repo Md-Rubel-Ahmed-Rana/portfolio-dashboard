@@ -1,6 +1,11 @@
 <template>
     <div class="shadow-lg px-5 pb-8 rounded-md">
-        <h3 class="text-2xl font-semibold">Add New Experience</h3>
+        <div class="flex justify-between items-center mb-4">
+            <h4 class="text-2xl font-semibold text-gray-600">Add New Experience</h4>
+            <router-link to="/dashboard/experiences">
+                <button class="bg-blue-500 px-10 py-2 rounded-md text-white">Back</button>
+            </router-link>
+        </div>
         <form @submit.prevent="handleAddNewExperience">
             <div class="mt-4">
                 <label for="name" class="block mb-2 text-md font-semibold">Company Name:</label>
@@ -16,7 +21,7 @@
                 </div>
                 <div class="mt-4 w-1/2">
                     <label for="institute" class="block mb-2 text-md font-semibold">Company Type:</label>
-                    <select name="" id="" v-model="formData.type"
+                    <select name="" id="" v-model="formData.workType"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                         <option v-for="type in companyTypes" :value="type">{{ type }}</option>
                     </select>
@@ -91,7 +96,7 @@
 
 
 <script>
-import { mapState, mapActions } from "vuex"
+import {  mapActions } from "vuex"
 import makeArrayFromString from '@/utils/makeArrayFromString';
 export default {
     methods: {
@@ -108,7 +113,7 @@ export default {
             formData: {
                 name: "",
                 size: 0,
-                type: "Startup",
+                workType: "Startup",
                 designation: "",
                 workLocation: "Onsite",
                 location: "",
