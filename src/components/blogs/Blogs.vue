@@ -14,7 +14,7 @@
         <p><span class="text-lg font-semibold text-gray-600">Comments:</span> {{ blog.comments }} </p>
         <div><span class="text-lg font-semibold text-gray-600">Body:</span> <div v-html="blog.body"></div></div>
         <div class="flex gap-3 mt-5">
-            <button class="bg-red-600 px-5 py-2 rounded-md text-white">Delete</button>
+            <button @click="handleDeleteBlog(blog.id)" class="bg-red-600 px-5 py-2 rounded-md text-white">Delete</button>
              <router-link :to="`/dashboard/blogs/edit/${blog.id}`">
                 <button class="bg-blue-600 px-5 py-2 rounded-md text-white">Update</button>
             </router-link>
@@ -30,7 +30,10 @@ export default {
         ...mapState(["blogs"])
     },
     methods: {
-        ...mapActions(["getBlogs"]),
+        ...mapActions(["getBlogs", "deleteBlog"]),
+        handleDeleteBlog(id){
+            this.deleteBlog({id})
+        }
     },
     created() {
         this.getBlogs();
