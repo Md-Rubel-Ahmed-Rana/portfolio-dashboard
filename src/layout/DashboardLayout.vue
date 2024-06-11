@@ -1,9 +1,9 @@
 <template>
-  <div class="flex p-10 gap-5">
-    <div class="w-1/6">
+  <div class="flex lg:p-10 p-5 gap-5">
+    <div class="lg:block hidden w-1/6">
       <Sidebar />
     </div>
-    <div class="w-5/6">
+    <div class="lg:w-5/6 w-full">
         <router-view/>
     </div>
   </div>

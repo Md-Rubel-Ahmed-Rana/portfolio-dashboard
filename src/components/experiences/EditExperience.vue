@@ -1,6 +1,6 @@
 <template>
-    <div class="shadow-lg p-5 border rounded-md">
-        <div class="flex justify-between">
+    <div class="lg:shadow-lg lg:p-5 lg:border rounded-md">
+        <div class="lg:flex justify-between">
             <h1 class="text-3xl font-semibold mb-4">Edit Experience</h1>
             <p>
                 <router-link to="/dashboard/experiences">
@@ -14,13 +14,13 @@
                 <input type="text" id="name" v-model="formData.name"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
-            <div class="flex justify-between gap-5">
-                <div class="mt-4 w-1/2">
+            <div class="flex flex-col lg:flex-row justify-between gap-5">
+                <div class="mt-4 lg:w-1/2 w-full">
                     <label for="board" class="block mb-2 text-md font-semibold">Designation:</label>
                     <input type="text" id="institute" v-model="formData.designation"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/2">
+                <div class="mt-4 lg:w-1/2 w-full">
                     <label for="institute" class="block mb-2 text-md font-semibold">Company Type:</label>
                     <select name="" id="" v-model="formData.type"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -34,8 +34,8 @@
                 <input type="text" id="location" v-model="formData.location"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
-            <div class="flex justify-between gap-5">
-                <div class="mt-4 w-1/3">
+            <div class="flex flex-col lg:flex-row justify-between gap-5">
+                <div class="mt-4 lg:w-1/3 w-full">
                     <label for="workLocation" class="block mb-2 text-md font-semibold">Work Location:</label>
                     <select id="workLocation" v-model="formData.workLocation"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -44,18 +44,18 @@
                         <option value="Hybrid">Hybrid</option>
                     </select>
                 </div>
-                <div class="mt-4 w-1/4">
+                <div class="mt-4 lg:w-1/4 w-full">
                     <label for="size" class="block mb-2 text-md font-semibold">Company size:</label>
                     <input type="text" id="size" v-model="formData.size"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/4">
+                <div class="mt-4 lg:w-1/4 w-full">
                     <label for="startDate" class="block mb-2 text-md font-semibold">Start Date:</label>
                     <input type="date" id="startDate" v-model="formData.startDate"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
 
-                <div class="mt-4 w-1/4">
+                <div class="mt-4 lg:w-1/4 w-full">
                     <label for="endDate" class="block mb-2 text-md font-semibold">End Date:</label>
                     <input type="date" id="endDate" v-model="formData.endDate"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -85,7 +85,7 @@
             </div>
             <div class="mt-6">
                 <button type="submit"
-                    class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
+                    class="bg-blue-600 w-full text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
                     Changes</button>
             </div>
         </form>
