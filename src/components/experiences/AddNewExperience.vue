@@ -1,9 +1,9 @@
 <template>
-    <div class="shadow-lg px-5 pb-8 rounded-md">
-        <div class="flex justify-between items-center mb-4">
+    <div class="lg:shadow-lg lg:px-5 lg:pb-8 rounded-md">
+        <div class="flex flex-col lg:flex-row justify-between mb-4">
             <h4 class="text-2xl font-semibold text-gray-600">Add New Experience</h4>
             <router-link to="/dashboard/experiences">
-                <button class="bg-blue-500 px-10 py-2 rounded-md text-white">Back</button>
+                <button class="bg-blue-500 px-10 py-2 mt-4 lg:mt-0 rounded-md text-white">Back</button>
             </router-link>
         </div>
         <form @submit.prevent="handleAddNewExperience">
@@ -12,14 +12,14 @@
                 <input type="text" id="name" v-model="formData.name" placeholder="Enter your company name"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
-            <div class="flex justify-between gap-5">
-                <div class="mt-4 w-1/2">
+            <div class="flex flex-col lg:flex-row justify-between gap-5">
+                <div class="mt-4 lg:w-1/2 w-full">
                     <label for="board" class="block mb-2 text-md font-semibold">Designation:</label>
                     <input placeholder="Enter your position: Full Stack Developer" type="text" id="institute"
                         v-model="formData.designation"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/2">
+                <div class="mt-4 lg:w-1/2 w-full">
                     <label for="institute" class="block mb-2 text-md font-semibold">Company Type:</label>
                     <select name="" id="" v-model="formData.workType"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -33,8 +33,8 @@
                 <input placeholder="Enter your company location" type="text" id="location" v-model="formData.location"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
-            <div class="flex justify-between gap-5">
-                <div class="mt-4 w-1/4">
+            <div class="flex flex-col lg:flex-row justify-between gap-5">
+                <div class="mt-4 lg:w-1/4 w-full">
                     <label for="workLocation" class="block mb-2 text-md font-semibold">Work Location:</label>
                     <select id="workLocation" v-model="formData.workLocation"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -43,17 +43,17 @@
                         <option value="Hybrid">Hybrid</option>
                     </select>
                 </div>
-                <div class="mt-4 w-1/4">
+                <div class="mt-4 lg:w-1/4 w-full">
                     <label for="size" class="block mb-2 text-md font-semibold">Company size:</label>
                     <input type="text" id="size" v-model="formData.size"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/4">
+                <div class="mt-4 lg:w-1/4 w-full">
                     <label for="startDate" class="block mb-2 text-md font-semibold">Start Date:</label>
                     <input type="date" id="startDate" v-model="formData.startDate"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/4">
+                <div class="mt-4 lg:w-1/4 w-full">
                     <label for="endDate" class="block mb-2 text-md font-semibold">End Date:</label>
                     <input type="date" id="endDate" v-model="formData.endDate"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -86,7 +86,7 @@
             </div>
             <div class="mt-6">
                 <button type="submit"
-                    class="bg-blue-600 text-white py-2 px-10 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
+                    class="bg-blue-600 w-full text-white py-2 px-10 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
                 </button>
             </div>
         </form>

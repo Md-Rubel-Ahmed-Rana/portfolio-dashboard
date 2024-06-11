@@ -1,17 +1,21 @@
 <template>
-    <div class="flex justify-between">
-        <h1 class="text-3xl font-semibold mb-4">Experiences</h1>
+    <div class="lg:flex justify-between gap-3">
+        <h1 class="lg:text-3xl text-2xl font-semibold mb-4">Experiences</h1>
         <p>
             <router-link to="/dashboard/experiences/add-new-experience">
-                <button class="bg-blue-600 px-5 py-2 rounded-md text-white">Add Experience</button>
+                <button class="bg-blue-600 lg:px-5 px-3 lg:py-2 py-1 rounded-md text-white">Add Experience</button>
             </router-link>
         </p>
     </div>
+    <router-link to="/dashboard">
+        <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md my-5 py-1">Back</button>
+    </router-link>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div v-for="(experience, index) in experiences" :key="index"
             class="p-4 border rounded-lg flex flex-col justify-between ">
             <div>
-                <h2 class="font-semibold mb-2"><span class="font-semibold">Company:</span> {{ experience.name }}</h2>
+                <h2 class="font-semibold mb-2"><span class="font-semibold">Company:</span> {{ experience.name }}
+                </h2>
                 <p class="mb-4"><span class="font-semibold">Type:</span> {{ experience.workType }}</p>
                 <p class="mb-4"><span class="font-semibold">Location:</span> {{ experience.location }}</p>
                 <p class="mb-4"><span class="font-semibold">Work Location:</span> {{ experience.workLocation }}</p>
