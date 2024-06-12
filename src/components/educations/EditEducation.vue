@@ -1,6 +1,9 @@
 <template>
-    <div class="shadow-lg px-5 pb-8 rounded-md">
+    <div class="lg:shadow-lg lg:px-5 lg:pb-8 rounded-md">
         <h3 class="text-2xl font-semibold">Edit Education</h3>
+        <router-link to="/dashboard/educations">
+            <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md my-5 py-1">Back</button>
+        </router-link>
         <form @submit.prevent="handleEditEducation">
             <div class="mt-4">
                 <label for="name" class="block mb-2 text-md font-semibold">Class Name:</label>
@@ -12,18 +15,18 @@
                 <input type="text" id="name" v-model="formData.institute"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
-            <div class="flex justify-between gap-5 mb-4">
-                <div class="mt-4 w-4/6">
+            <div class="flex flex-col lg:flex-row justify-between gap-5 mb-4">
+                <div class="mt-4 w-full lg:w-4/6">
                     <label for="board" class="block mb-2 text-md font-semibold">Board:</label>
                     <input type="text" id="institute" v-model="formData.board"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/6">
+                <div class="mt-4 w-full lg:w-1/6">
                     <label for="passingYear" class="block mb-2 text-md font-semibold">Passing Year:</label>
                     <input type="text" id="passingYear" v-model="formData.passingYear"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/6">
+                <div class="mt-4 w-full lg:w-1/6">
                     <label for=" result" class="block mb-2 text-md font-semibold">Result:</label>
                     <input type="text" id="result" v-model="formData.result"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -32,7 +35,7 @@
             </div>
             <div class="mt-6">
                 <button type="submit"
-                    class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
+                    class="bg-blue-600 w-full text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
                     Changes</button>
             </div>
         </form>

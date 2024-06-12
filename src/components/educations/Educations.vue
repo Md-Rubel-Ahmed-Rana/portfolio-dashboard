@@ -1,11 +1,14 @@
 <template>
-    <div class="flex justify-between">
-        <h1 class="text-3xl font-semibold mb-4">Educations</h1>
+    <div class="flex flex-col lg:flex-row justify-between">
+        <h1 class="lg:text-3xl text-2xl font-semibold mb-4">Educations</h1>
         <p>
             <router-link to="/dashboard/educations/add-new-education">
                 <button class="bg-blue-600 px-5 py-2 rounded-md text-white">Add education</button>
             </router-link>
         </p>
+        <router-link to="/dashboard">
+            <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md my-5 py-1">Back</button>
+        </router-link>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         <div v-for="education in educations" :key="education.id" class="bg-white rounded-lg border shadow-md p-4">
