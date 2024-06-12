@@ -1,5 +1,5 @@
 import { IFeedback } from "./../types/feedback.type";
-import { ICommit, IDispatch } from "@/types/vuex.types";
+import { ICommit } from "@/types/vuex.types";
 import axios from "axios";
 import { authHeader, baseApi } from ".";
 
@@ -11,13 +11,16 @@ export const feedbackApi = {
     commit("setFeedbacks", res?.data?.data);
   },
   async updateFeedback(
-    { dispatch }: IDispatch,
+    { commit }: ICommit,
     { id, payload }: { id: string; payload: IFeedback }
   ) {
     await axios.patch(`${baseApi}/feedback/update/${id}`, payload, {
       headers: authHeader,
     });
-    dispatch("getFeedbacks");
+    const res = await axios.get(`${baseApi}/feedback/all?filter=all`, {
+      headers: authHeader,
+    });
+    commit("setFeedbacks", res?.data?.data);
   },
   async deleteFeedback({ commit }: ICommit, { id }: { id: string }) {
     await axios.delete(`${baseApi}/feedback/delete/${id}`, {
