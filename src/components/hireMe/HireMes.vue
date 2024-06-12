@@ -1,8 +1,12 @@
 <template>
     <div>
         <h1 class="text-3xl font-semibold mb-4">Hire Me Invitations</h1>
+        <router-link to="/dashboard">
+            <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md my-2 py-1">Back</button>
+        </router-link>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div v-for="hireMe in hireMes" :key="hireMe._id" class="p-4 pb-10 relative border rounded-lg shadow-md bg-white">
+            <div v-for="hireMe in hireMes" :key="hireMe._id"
+                class="p-4 pb-10 relative border rounded-lg shadow-md bg-white">
                 <h2 class="text-xl font-bold">{{ hireMe.name }}</h2>
                 <p><strong>Email:</strong> {{ hireMe.email }}</p>
                 <p><strong>Company:</strong> {{ hireMe.companyName }}</p>
