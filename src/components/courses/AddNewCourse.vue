@@ -1,6 +1,11 @@
 <template>
-    <div class="shadow-lg px-5 pb-8 rounded-md">
-        <h3 class="text-2xl font-semibold">Edit course</h3>
+    <div class="lg:shadow-lg lg:px-5 lg:pb-8 rounded-md">
+        <div class="flex justify-between items-center">
+            <h3 class="lg:text-2xl text-xl font-semibold">Add New Course</h3>
+            <router-link to="/dashboard/courses">
+                <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md my-2 py-1">Back</button>
+            </router-link>
+        </div>
         <form @submit.prevent="handleAddCourse">
             <div class="mt-4">
                 <label for="name" class="block mb-2 text-md font-semibold">Course name:</label>
@@ -8,7 +13,7 @@
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
 
-            <div class="flex justify-between gap-5">
+            <div class="flex flex-col lg:flex-row justify-between gap-5">
                 <div class="mt-4 w-full">
                     <label for="duration" class="block mb-2 text-md font-semibold">Duration:</label>
                     <input placeholder="Enter course duration" type="text" id="duration" v-model="formData.duration"
@@ -25,19 +30,19 @@
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
             </div>
-            <div class="flex justify-between gap-5 mb-4">
-                <div class="mt-4 w-4/6">
+            <div class="flex flex-col lg:flex-row justify-between gap-5 mb-4">
+                <div class="mt-4 w-full lg:w-4/6">
                     <label for="institute" class="block mb-2 text-md font-semibold">Institute name:</label>
                     <input placeholder="Enter your course institute name" type="text" id="institute"
                         v-model="formData.institute"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/6">
+                <div class="mt-4 w-full lg:w-1/6">
                     <label for="passingYear" class="block mb-2 text-md font-semibold">Passing Year:</label>
                     <input placeholder="Enter passing year" type="text" id="passingYear" v-model="formData.passingYear"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/6">
+                <div class="mt-4 w-full lg:w-1/6">
                     <label for=" result" class="block mb-2 text-md font-semibold">Result:</label>
                     <input placeholder="Enter your result" type="text" id="result" v-model="formData.result"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -59,7 +64,7 @@
             </div>
             <div class="mt-6">
                 <button type="submit"
-                    class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
+                    class="bg-blue-600 w-full text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
                     Changes</button>
             </div>
         </form>

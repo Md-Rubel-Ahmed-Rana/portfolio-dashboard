@@ -1,13 +1,18 @@
 <template>
-    <div class="shadow-lg px-5 pb-8 rounded-md">
-        <h3 class="text-2xl font-semibold">Edit course</h3>
+    <div class="lg:shadow-lg lg:px-5 lg:pb-8 rounded-md">
+        <div class="flex justify-between">
+            <h3 class="text-2xl font-semibold">Edit course</h3>
+            <router-link to="/dashboard/courses">
+                <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md my-2 py-1">Back</button>
+            </router-link>
+        </div>
         <form @submit.prevent="handleEditCourse">
             <div class="mt-4">
                 <label for="name" class="block mb-2 text-md font-semibold">Course Name:</label>
                 <input type="text" id="name" v-model="formData.name"
                     class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
-            <div class="flex justify-between gap-5">
+            <div class="flex flex-col lg:flex-row justify-between gap-5">
                 <div class="mt-4 w-full">
                     <label for="duration" class="block mb-2 text-md font-semibold">Duration:</label>
                     <input type="text" id="duration" v-model="formData.duration"
@@ -24,23 +29,22 @@
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
             </div>
-            <div class="flex justify-between gap-5 mb-4">
-                <div class="mt-4 w-4/6">
+            <div class="flex flex-col lg:flex-row justify-between gap-5 mb-4">
+                <div class="mt-4 w-full lg:w-4/6">
                     <label for="institute" class="block mb-2 text-md font-semibold">Institute:</label>
                     <input type="text" id="institute" v-model="formData.institute"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/6">
+                <div class="mt-4 w-full lg:w-1/6">
                     <label for="passingYear" class="block mb-2 text-md font-semibold">Passing Year:</label>
                     <input type="text" id="passingYear" v-model="formData.passingYear"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="mt-4 w-1/6">
+                <div class="mt-4 w-full lg:w-1/6">
                     <label for=" result" class="block mb-2 text-md font-semibold">Result:</label>
                     <input type="text" id="result" v-model="formData.result"
                         class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                 </div>
-
             </div>
             <div class="mb-4">
                 <div class="block text-gray-700  font-semibold text-lg">
@@ -55,17 +59,17 @@
                     <span class="text-sm font-semibold" v-if="isUploading">Uploading Image. Please wait...</span>
                 </p>
                 <button v-if="!isUploadImage" @click="toggleImageUpload" type="button"
-                    class="bg-purple-500 text-white mt-4 py-2 px-3 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-500">
-                    Change image
+                    class="bg-blue-500 text-white mt-4 py-2 px-3 rounded-md focus:outline-none focus:ring ">
+                    Change
                 </button>
                 <button v-if="isUploadImage" @click="toggleImageUpload" type="button"
-                    class="bg-purple-500 text-white mt-5 py-2 px-3 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-500">
+                    class="bg-yellow-500 text-white mt-5 py-2 px-3 rounded-md focus:outline-none focus:ring ">
                     Cancel
                 </button>
             </div>
             <div class="mt-6">
                 <button type="submit"
-                    class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
+                    class="bg-blue-600 w-full text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save
                     Changes</button>
             </div>
         </form>
