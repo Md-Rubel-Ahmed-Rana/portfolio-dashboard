@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="flex justify-between items-center mb-4">
-            <h4 class="text-2xl font-semibold text-gray-600">Update Service</h4>
+        <div class="flex flex-col lg:flex-row justify-between mb-4">
+            <h4 class="text-2xl font-semibold text-gray-600">Edit Service</h4>
             <router-link to="/dashboard/services">
-                <button class="bg-blue-500 px-10 py-2 rounded-md text-white">Back</button>
+                <button class="bg-blue-500 px-10 mt-4 lg:mt-0 py-2 rounded-md text-white">Back</button>
             </router-link>
         </div>
-        <form @submit.prevent="handleUpdateService" class="shadow-md border rounded-md p-5">
+        <form @submit.prevent="handleUpdateService" class="lg:shadow-md lg:border rounded-md lg:p-5">
             <div class="mb-3">
                 <label class="text-xl font-semibold text-gray-600" for="name">Name:</label>
                 <input v-model="formData.name"
@@ -36,7 +36,7 @@
                         class="bg-yellow-600 px-3 py-1 rounded-md mt-1 text-white">Cancel</button>
                 </div>
             </div>
-            <button type="submit" class="bg-blue-500 px-10 mt-5 py-2 rounded-md text-white">Update</button>
+            <button type="submit" class="bg-blue-500 w-full px-10 mt-5 py-2 rounded-md text-white">Update</button>
         </form>
     </div>
 </template>
