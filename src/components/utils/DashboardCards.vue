@@ -1,5 +1,5 @@
 <template>
-  <div class="p-10">
+  <div class="lg:p-10 p-4">
     <div>
       <h4 class="lg:text-3xl text-xl font-semibold text-center my-5 text-gray-500" >Total Table/Documents on Database ({{ cards?.length }})</h4>
     </div>

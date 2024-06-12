@@ -1,6 +1,9 @@
 <template>
-  <div class="px-8 pb-8 bg-white shadow-md rounded-lg">
-    <h2 class="text-2xl font-semibold mb-4">Add a new project</h2>
+  <div class="lg:px-8 lg:pb-8 bg-white lg:shadow-md rounded-lg">
+    <h2 class="text-2xl font-semibold mb-4">Add New Project</h2>
+    <router-link to="/dashboard/projects">
+      <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md mb-3 py-1">Back</button>
+    </router-link>
     <form @submit.prevent="submitForm">
       <div class="mb-4">
         <label for="name" class="block text-gray-700 font-semibold mb-2 text-lg">Project Name:</label>
@@ -27,14 +30,14 @@
           name="technologies" id="" cols="30" rows="3"
           class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"></textarea>
       </div>
-      <div class="flex justify-between items-center gap-5 mb-4">
-        <div class="w-1/2">
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5 mb-4">
+        <div class="w-full lg:w-1/2">
           <label for="startDate" class="block text-gray-700 font-semibold mb-2 text-lg">Start Date:</label>
           <input placeholder="Select your project's starting date" required type="date"
             v-model="formData.projectLength.startDate" id="startDate" name="startDate"
             class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
         </div>
-        <div class="w-1/2">
+        <div class="w-full lg:w-1/2">
           <label for="endDate" class="block text-gray-700 font-semibold mb-2 text-lg">End Date:</label>
           <input placeholder="Select your project's ending date" type="date" v-model="formData.projectLength.endDate"
             id="endDate" name="endDate"
@@ -49,20 +52,20 @@
       </div>
       <div class="mb-4">
         <label for="liveLink" class="block text-gray-700 font-semibold mb-2 text-lg">Live Link:</label>
-        <input placeholder="Enter your project live link." type="text" v-model="formData.liveLink"
-          id="liveLink" name="liveLink"
+        <input placeholder="Enter your project live link." type="text" v-model="formData.liveLink" id="liveLink"
+          name="liveLink"
           class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
       </div>
-      <div class="mb-4 flex items-center gap-2">
+      <div class="mb-4 flex flex-col lg:flex-row items-start lg:items-center gap-2">
         <label for="projectStatus" class="block text-gray-700 font-semibold mb-2 text-lg">Project Status:</label>
         <select required id="projectStatus" v-model="formData.projectStatus" name="projectStatus"
-          class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
+          class="border w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500">
           <option v-for="status in projectStatuses" :value="status" :key="status">{{ status }}</option>
         </select>
       </div>
       <div class="mt-6">
         <button type="submit"
-          class="bg-blue-600 text-white py-2 px-14 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save</button>
+          class="bg-blue-600 w-full text-white py-2 px-14 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">Save</button>
       </div>
     </form>
   </div>
