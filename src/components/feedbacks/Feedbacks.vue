@@ -1,6 +1,9 @@
 <template>
   <div class="flex flex-col lg:flex-row justify-between mb-4">
     <h1 class="text-3xl font-semibold">Feedbacks</h1>
+    <router-link to="/dashboard">
+      <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md my-2 py-1">Back</button>
+    </router-link>
     <div class="flex items-center mt-3 lg:mt-0 gap-2">
       <h5 class="text-xl font-semibold">Filter: </h5>
       <select v-model="selectedFilter" class="border px-3 py-1 rounded-md outline-none" name="filter" id="filter">
