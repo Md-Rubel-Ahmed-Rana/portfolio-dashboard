@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between">
+  <div class="flex flex-col lg:flex-row justify-between">
     <h1 class="text-3xl font-semibold mb-4">Upcoming updates</h1>
     <p>
       <router-link to="/dashboard/updates/add-new-update">
@@ -7,6 +7,9 @@
       </router-link>
     </p>
   </div>
+  <router-link to="/dashboard">
+    <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md my-5 py-1">Back</button>
+  </router-link>
   <ul v-for="update in updates" class="space-y-8 mt-5 shadow border rounded-md p-5" :key="update.id">
     <li>
       <h4 className="text-lg text-gray-600 font-medium mb-2">{{ update.title }}</h4>
