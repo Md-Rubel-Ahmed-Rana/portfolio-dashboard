@@ -1,10 +1,9 @@
 <template>
-  <div class="flex justify-between mb-4">
+  <div class="flex flex-col lg:flex-row justify-between mb-4">
     <h1 class="text-3xl font-semibold">Feedbacks</h1>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center mt-3 lg:mt-0 gap-2">
       <h5 class="text-xl font-semibold">Filter: </h5>
-      <select v-model="selectedFilter" class="bg-blue-600 px-3 py-1 rounded-md text-white outline-none" name="status"
-        id="status">
+      <select v-model="selectedFilter" class="border px-3 py-1 rounded-md outline-none" name="filter" id="filter">
         <option value="all">All</option>
         <option value="pending">Pending</option>
         <option value="approved">Approved</option>
@@ -21,7 +20,7 @@
     <div class="mt-4 flex gap-3">
       <button @click="handleDeleteFeedback(feedback.id)"
         class="bg-red-600 px-3 py-1 rounded-md text-white outline-none">Delete</button>
-      <select @change="(e) => handleChangeStatus(e.target.value, feedback)"
+      <select v-model="feedback.status" @change="(e) => handleChangeStatus(e.target.value, feedback)"
         class="bg-blue-600 px-3 py-1 rounded-md text-white outline-none" name="status" id="status">
         <option value="pending">Pending</option>
         <option value="approved">Approve</option>
