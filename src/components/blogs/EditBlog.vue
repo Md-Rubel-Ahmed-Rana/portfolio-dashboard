@@ -6,7 +6,7 @@
                 <button class="bg-blue-500 px-10 py-2 rounded-md text-white">Back</button>
             </router-link>
         </div>
-        <form @submit.prevent="handleEditBlog" class="shadow-md border rounded-md p-5">
+        <form @submit.prevent="handleEditBlog" class="lg:shadow-md lg:border rounded-md lg:p-5">
             <div class="mb-3">
                 <label class="text-xl font-semibold text-gray-600" for="title">Title:</label>
                 <input v-model="formData.title"
@@ -39,7 +39,7 @@
                 <button type="button" @click="handleToggleImageChange"
                     class="bg-blue-500 px-3 py-1 rounded-md mt-1 text-white">Change</button>
             </div>
-            <button type="submit" class="bg-blue-500 px-10 mt-5 py-2 rounded-md text-white">Save</button>
+            <button type="submit" class="bg-blue-500 w-full px-10 mt-5 py-2 rounded-md text-white">Save changes</button>
         </form>
     </div>
 </template>
