@@ -1,8 +1,8 @@
 <template>
-    <div class="flex justify-between items-center mb-4">
+    <div class="flex flex-col lg:flex-row justify-between mb-4">
         <h4 class="text-2xl font-semibold text-gray-600">Add New Update</h4>
         <router-link to="/dashboard/updates">
-            <button class="bg-blue-500 px-10 py-2 rounded-md text-white">Back</button>
+            <button class="bg-blue-500 px-10 py-2 mt-4 lg:mt-0 rounded-md text-white">Back</button>
         </router-link>
     </div>
     <form @submit.prevent="handleAddNewUpdate" class="shadow-md border rounded-md p-5">
@@ -45,7 +45,7 @@
                 name="description" id="description" cols="20" rows="5"
                 placeholder="Enter update description"></textarea>
         </div>
-        <button type="submit" class="bg-blue-500 px-10 mt-5 py-2 rounded-md text-white">Create</button>
+        <button type="submit" class="bg-blue-500 w-full px-10 mt-5 py-2 rounded-md text-white">Create</button>
     </form>
 </template>
 

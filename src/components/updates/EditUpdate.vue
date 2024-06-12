@@ -45,7 +45,7 @@
                 name="description" id="description" cols="20" rows="5"
                 placeholder="Enter update description"></textarea>
         </div>
-        <button type="submit" class="bg-blue-500 px-10 mt-5 py-2 rounded-md text-white">Save changes</button>
+        <button type="submit" class="bg-blue-500 w-full px-10 mt-5 py-2 rounded-md text-white">Save changes</button>
     </form>
 </template>
 
