@@ -1,10 +1,12 @@
 <template>
-  <div class="flex justify-between">
+  <div class="flex flex-col lg:flex-row justify-between">
     <h1 class="text-3xl font-semibold mb-4">Comments</h1>
-    <p>
+    <router-link to="/dashboard">
+      <button class="bg-blue-600 lg:hidden block px-5 text-white rounded-md mb-2 py-1">Back</button>
+    </router-link>
+    <p class="flex items-center gap-2 mb-2">
       <span class="text-xl">Filter: </span>
-      <select v-model="selectedItem" class="bg-blue-600 px-5 py-2 outline-none  rounded-md text-white" name="filter"
-        id="filter">
+      <select v-model="selectedItem" class="py-2 outline-none border  rounded-md" name="filter" id="filter">
         <option value="" disabled>Select an item</option>
         <option value="All">All</option>
         <option class="mb-2" v-for="project in projects" :key="project.id" :value="project.id">
@@ -18,6 +20,8 @@
   <div v-for="comment in comments" :key="comment.id" class="shadow-md p-4 rounded-md border mb-5">
     <h5> <span class="text-lg font-semibold text-gray-600">Name: </span> {{ comment.name }}</h5>
     <p> <span class="text-lg font-semibold text-gray-600">Comment: </span> {{ comment.comment }}</p>
+    <p> <span class="text-lg font-semibold text-gray-600">Status: </span> {{ comment.suspend ? "Suspended" : "Not Suspended" }}
+    </p>
     <h6> <span class="text-lg font-semibold text-gray-600">Post: </span>{{ comment.postId.title || comment.postId.name
       }} </h6>
     <button @click="handleDeleteComment(comment.id)"
