@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="flex justify-between items-center mb-4">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4">
             <h4 class="text-2xl font-semibold text-gray-600">Add New Service</h4>
             <router-link to="/dashboard/services">
-                <button class="bg-blue-500 px-10 py-2 rounded-md text-white">Back</button>
+                <button class="bg-blue-500 px-10 mt-4 lg:mt-0 py-2 rounded-md text-white">Back</button>
             </router-link>
         </div>
-        <form @submit.prevent="handleAddNewService" class="shadow-md border rounded-md p-5">
+        <form @submit.prevent="handleAddNewService" class="lg:shadow-md lg:border rounded-md lg:p-5">
             <div class="mb-3">
                 <label class="text-xl font-semibold text-gray-600" for="name">Name:</label>
                 <input v-model="formData.name"
@@ -33,7 +33,7 @@
                 <button type="button" @click="handleToggleImageChange"
                     class="bg-blue-500 px-3 py-1 rounded-md mt-1 text-white">Change</button>
             </div>
-            <button type="submit" class="bg-blue-500 px-10 mt-5 py-2 rounded-md text-white">Create</button>
+            <button type="submit" class="bg-blue-500 w-full px-10 mt-5 py-2 rounded-md text-white">Create</button>
         </form>
     </div>
 </template>
