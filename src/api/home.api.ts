@@ -48,10 +48,11 @@ export const homeApis = {
     { dispatch }: IDispatch,
     { id, data }: { id: string; data: string[] }
   ) {
-    await axios.patch(`${baseApi}/home/skills/${id}`, {
-      headers: authHeader,
-      skills: data,
-    });
+    await axios.patch(
+      `${baseApi}/home/update/skills/${id}`,
+      { skills: data },
+      { headers: authHeader }
+    );
     dispatch("setHomeData");
     router.push("/dashboard/homes");
   },
@@ -59,10 +60,23 @@ export const homeApis = {
     { dispatch }: IDispatch,
     { id, data }: { id: string; data: ISocialLinks[] }
   ) {
-    await axios.patch(`${baseApi}/home/social-links/${id}`, {
-      headers: authHeader,
-      socialLinks: data,
-    });
+    await axios.patch(
+      `${baseApi}/home/update/social-links/${id}`,
+      { socialLinks: data },
+      { headers: authHeader }
+    );
+    dispatch("setHomeData");
+    router.push("/dashboard/homes");
+  },
+  async updateSkillIcons(
+    { dispatch }: IDispatch,
+    { id, data }: { id: string; data: any }
+  ) {
+    await axios.patch(
+      `${baseApi}/home/update/skill-icons/${id}`,
+      { skillIcons: data },
+      { headers: authHeader }
+    );
     dispatch("setHomeData");
     router.push("/dashboard/homes");
   },

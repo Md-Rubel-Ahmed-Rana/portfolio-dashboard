@@ -9,7 +9,7 @@
         </div>
       </div>
       <p>
-        <router-link to="/dashboard/utils/social-links-content/edit">
+        <router-link to="/dashboard/homes/social-links-content/edit">
           <button class="bg-blue-500 text-white px-5 py-2 rounded-md">Edit content</button>
         </router-link>
       </p>
@@ -24,11 +24,18 @@ export default {
         socialLinks: {
             type: Array,
             required: true
+        },
+        id: {
+          type: String,
+           required: true
         }
     },
     computed: {
         content(){
-            return this.socialLinks
+            return {
+              socialLinks: this.socialLinks, 
+              id: this.id
+            }
         }
     }
 }
