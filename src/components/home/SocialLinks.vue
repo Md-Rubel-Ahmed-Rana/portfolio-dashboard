@@ -1,11 +1,11 @@
 <template>
-  <div class="p-10 shadow-md">
-    <h3 class="text-4xl font-bold mb-8">Social links content</h3>
+  <div class="lg:p-10 p-3 shadow-md">
+    <h3 class="lg:text-4xl text-2xl font-bold mb-4 lg:mb-8">Social links</h3>
     <div>
-      <div class="flex flex-col gap-5  mb-4">
-        <div v-for="social in socialLinks" class=" rounded-md p-4 shadow-md">
+      <div class="flex flex-col gap-2 lg:gap-5  mb-4">
+        <div v-for="social in socialLinks" class=" rounded-md p-4 border shadow-md">
           <p class="text-lg font-semibold">{{ social?.name }}</p>
-          <p>{{ social?.link }}</p>
+          <a href="{{ social?.link }}" class="break-words text-blue-500 underline">{{ social?.link }}</a>
         </div>
       </div>
       <p>

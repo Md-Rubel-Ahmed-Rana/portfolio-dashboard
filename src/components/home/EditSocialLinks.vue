@@ -1,10 +1,16 @@
 <template>
     <div>
-        <h2 class="text-2xl font-semibold mb-4">Edit social links data: {{ id }}</h2>
-        <form @submit.prevent="handleEditSocialLinks" class="mb-4 flex flex-col gap-5 border p-4 rounded-lg">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-semibold ">Edit social links</h2>
+            <router-link to="/dashboard/homes">
+                <button class="bg-blue-600 px-5 text-white rounded-md my-2 py-1">Back</button>
+            </router-link>
+        </div>
+        <form @submit.prevent="handleEditSocialLinks" class="mb-4 flex flex-col gap-5 lg:border lg:p-4 rounded-lg">
             <div v-for="link in formData?.socialLinks">
                 <div class="flex flex-col gap-2 border p-2 rounded-md">
-                    <label for="description" class="block text-gray-700 font-semibold text-lg">{{ link.name }}</label>
+                    <label for="description" class="block text-gray-700 font-semibold text-lg">{{ link.name
+                        }}</label>
                     <input required v-model="link.name" id="name" name="name"
                         class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"></input>
                     <input required v-model="link.link" id="name" name="name"
@@ -27,7 +33,7 @@
             </div>
             <div v-if="formData?.socialLinks?.length > 0" class="mt-6">
                 <button type="submit"
-                    class="bg-blue-600 text-white py-2 px-14 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">
+                    class="bg-blue-600 w-full text-white py-2 px-14 rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-500">
                     Save changes
                 </button>
             </div>

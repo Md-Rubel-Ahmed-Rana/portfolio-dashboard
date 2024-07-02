@@ -1,7 +1,7 @@
 <template>
-    <div class="p-10 shadow-md">
+    <div class="lg:p-10 p-3 shadow-md">
         <h3 class="text-2xl font-semibold">Skill Icons</h3>
-        <div class="grid grid-cols-4 gap-3 lg:gap-5 mt-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-5 mt-4">
             <div v-for="(icon, skill) in skillIcons" :key="skill" class="border rounded-md shadow-md p-2">
                 <p> <b>Skill: </b> <span>{{ skill }}</span></p>
                 <p> <b>Icon:</b> <span>{{ icon }}</span></p>

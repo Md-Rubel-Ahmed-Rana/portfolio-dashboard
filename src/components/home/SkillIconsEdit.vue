@@ -6,7 +6,7 @@
                 <button class="bg-blue-600 px-5 text-white rounded-md my-2 py-1">Back</button>
             </router-link>
         </div>
-        <div class="grid grid-cols-4 gap-3 lg:gap-5 mt-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5 mt-4">
             <div v-for="(skill, index) in formData" :key="index" class="border rounded-md shadow-md p-2">
                 <p><b>Skill:</b> <input type="text" v-model="skill.name" class="border p-1 w-full" /></p>
                 <p><b>Icon:</b> <input type="text" v-model="skill.icon" class="border p-1 w-full" /></p>
